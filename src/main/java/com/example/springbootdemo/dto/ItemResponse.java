@@ -1,10 +1,10 @@
 package com.example.springbootdemo.dto;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
 public class ItemResponse {
 
     private int id;
-    private String itemName;
+    private String name;
 }

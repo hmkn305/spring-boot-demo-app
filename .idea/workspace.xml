@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="insert文を書こうとしたところ">
-      <change afterPath="$PROJECT_DIR$/docker/local/mysql/docker-entrypoint-initdb.d/1_create_test_databases.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/local/mysql/start.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.01.00__create_init_tables.sql" afterDir="false" />
+    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="mygration(flyway)導入&#10;タイムゾーンをapplication.propaertiesに書くとバグる">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/local/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/local/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/ItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/ItemMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,7 @@
       <workItem from="1675650550430" duration="318000" />
       <workItem from="1675651016599" duration="4973000" />
       <workItem from="1675662243668" duration="16000" />
-      <workItem from="1675662273943" duration="7756000" />
+      <workItem from="1675662273943" duration="10990000" />
     </task>
     <task id="LOCAL-00001" summary="first commit after create new IDEA project.">
       <created>1664966362594</created>
@@ -356,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675664468199</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="mygration(flyway)導入&#10;タイムゾーンをapplication.propaertiesに書くとバグる">
+      <created>1675670563286</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1675670563286</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +417,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="findAllメソッドの追加" />
     <MESSAGE value="insert文を書こうとしたところ" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert文を書こうとしたところ" />
+    <MESSAGE value="mygration(flyway)導入&#10;タイムゾーンをapplication.propaertiesに書くとバグる" />
+    <option name="LAST_COMMIT_MESSAGE" value="mygration(flyway)導入&#10;タイムゾーンをapplication.propaertiesに書くとバグる" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

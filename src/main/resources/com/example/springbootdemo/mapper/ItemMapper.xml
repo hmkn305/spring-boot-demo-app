@@ -4,7 +4,7 @@
 <mapper namespace="com.example.springbootdemo.mapper.ItemMapper">
 
   <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-    INSERT INTO item
+    INSERT INTO users
     SET
     <include refid="insertColumns"/>
   </insert>
@@ -12,25 +12,25 @@
   <select id="findAll" resultType="com.example.springbootdemo.entity.Item">
     SELECT
     <include refid="selectColumns"/>
-    FROM item
+    FROM users
     ORDER BY id
   </select>
 
   <select id="findById" resultType="com.example.springbootdemo.entity.Item">
     SELECT
     <include refid="selectColumns"/>
-    FROM item
+    FROM users
     WHERE id = #{id}
   </select>
 
   <sql id="selectColumns">
     `id`
     ,
-    `item_name`
+    `name`
   </sql>
   <sql id="insertColumns">
-    `item_name`
+    `name`
     =
-    #{item_name}
+    #{name}
   </sql>
 </mapper>

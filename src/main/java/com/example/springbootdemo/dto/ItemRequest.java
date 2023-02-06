@@ -4,5 +4,5 @@ import lombok.*;
 
 @Data
 public class ItemRequest {
-    private String itemName;
+    private String name;
 }

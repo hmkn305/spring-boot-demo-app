@@ -1,10 +1,10 @@
 package com.example.springbootdemo.entity;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
 public class Item {
 
     Integer id;
-    String itemName;
+    String name;
 }
