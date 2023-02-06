@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 @RestController
 @RequestMapping("/items")
 public class ItemController {
@@ -27,5 +29,20 @@ public class ItemController {
         return itemResponse;
     }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ItemResponse> getItems() {
+
+        List<ItemResponse> itemResponseList = new ArrayList<>();
+
+        List<Item> itemList = itemMapper.findAll();
+        itemList.forEach(item -> {
+            ItemResponse itemResponse = new ItemResponse();
+            BeanUtils.copyProperties(item, itemResponse);
+            itemResponseList.add(itemResponse);
+        });
+
+        return itemResponseList;
+    }
 
 }

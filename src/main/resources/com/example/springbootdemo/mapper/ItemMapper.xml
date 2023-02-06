@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springbootdemo.mapper.ItemMapper">
-    <delete id="delete">
-        DELETE FROM item WHERE id = #{id}
-    </delete>
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        INSERT INTO item (item_name) VALUES (#{item.itemName})
-    </insert>
-    <select id="findById" resultType="com.example.springbootdemo.entity.Item">
-        SELECT id , item_name FROM item WHERE id = #{id}
-    </select>
-    <select id="findAll" resultType="com.example.springbootdemo.entity.Item">
-        SELECT id , item_name FROM item ORDER BY id
-    </select>
-    <update id="update">
-        UPDATE item
-        SET item_name = #{item.itemName}
-        WHERE
-        id = #{item.id}
-    </update>
+
+  <select id="findById" resultType="com.example.springbootdemo.entity.Item">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM item
+    WHERE id = #{id}
+  </select>
+
+  <select id="findAll" resultType="com.example.springbootdemo.entity.Item">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM item
+    ORDER BY id
+  </select>
+
+  <sql id="selectColumns">
+    `id`
+    ,
+    `item_name`
+  </sql>
 </mapper>
