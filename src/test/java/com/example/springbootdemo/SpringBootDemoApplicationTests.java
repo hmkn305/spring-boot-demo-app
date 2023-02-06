@@ -1,28 +1,25 @@
 package com.example.springbootdemo;
 
+import com.example.springbootdemo.dto.*;
+import com.fasterxml.jackson.core.type.*;
+import com.fasterxml.jackson.databind.*;
+import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.boot.test.autoconfigure.web.servlet.*;
+import org.springframework.boot.test.context.*;
+import org.springframework.http.*;
+import org.springframework.test.context.jdbc.*;
+import org.springframework.test.web.servlet.*;
+import org.springframework.test.web.servlet.request.*;
+import org.springframework.test.web.servlet.result.*;
+import org.springframework.transaction.annotation.*;
+
+import java.nio.charset.*;
+import java.util.*;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import com.example.springbootdemo.dto.ItemRequest;
-import com.example.springbootdemo.dto.ItemResponse;
-import com.example.springbootdemo.dto.Sample;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.transaction.annotation.Transactional;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @SpringBootTest
@@ -49,9 +46,9 @@ class SpringBootDemoApplicationTests {
 
         // 「/hello」パスのAPIを実行してレスポンスを検証
         this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH))
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk())
-            .andExpect(content().json(objectMapper.writeValueAsString(sample)));
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isOk())
+                    .andExpect(content().json(objectMapper.writeValueAsString(sample)));
     }
 
     @Test
@@ -74,9 +71,9 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH1))
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk())
-            .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isOk())
+                    .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
 
         /**
          * POSTによる登録処理のテスト
@@ -96,14 +93,14 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(
-                MockMvcRequestBuilders
-                    .post(API_PATH2)
-                    .content(objectMapper.writeValueAsString(itemRequest))
-                    .contentType(MediaType.APPLICATION_JSON_VALUE)
-            )
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isCreated())
-            .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
+                    MockMvcRequestBuilders
+                            .post(API_PATH2)
+                            .content(objectMapper.writeValueAsString(itemRequest))
+                            .contentType(MediaType.APPLICATION_JSON_VALUE)
+                            )
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isCreated())
+                    .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
 
         /**
          * GETでIDを指定せずに全件を取得するテスト
@@ -115,15 +112,15 @@ class SpringBootDemoApplicationTests {
         ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH3));
         // レスポンスを出力して、ステータスコードを検証
         resultActions
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk());
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk());
         // JSONの件数が3件であることを検証
         // リクエストボディを文字列(JSON)をJavaオブジェクトに変換して、Listのサイズをassert
         String contentAsString = resultActions.andReturn().getResponse()
-            .getContentAsString(StandardCharsets.UTF_8);
+                                              .getContentAsString(StandardCharsets.UTF_8);
         List<ItemResponse> itemResponseList = objectMapper.readValue(contentAsString,
-            new TypeReference<List<ItemResponse>>() {
-            });
+                                                                     new TypeReference<List<ItemResponse>>() {
+                                                                     });
         assertThat(itemResponseList, hasSize(3));
 
         /**
@@ -143,14 +140,14 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(
-                MockMvcRequestBuilders
-                    .put(API_PATH4)
-                    .content(objectMapper.writeValueAsString(itemRequest))
-                    .contentType(MediaType.APPLICATION_JSON_VALUE)
-            )
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk())
-            .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
+                    MockMvcRequestBuilders
+                            .put(API_PATH4)
+                            .content(objectMapper.writeValueAsString(itemRequest))
+                            .contentType(MediaType.APPLICATION_JSON_VALUE)
+                            )
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isOk())
+                    .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
 
         /**
          * PUTでDB上の値が更新されているか、GETでIDを指定して1件取得して確認
@@ -165,9 +162,9 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH1))
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk())
-            .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isOk())
+                    .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
 
         /**
          * DELETEによる更新処理のテスト
@@ -178,8 +175,8 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(MockMvcRequestBuilders.delete(API_PATH6))
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isNoContent());
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isNoContent());
 
         /**
          * DELETEでDB上のレコードが削除されているか、GETで全件取得して件数で確認
@@ -191,15 +188,15 @@ class SpringBootDemoApplicationTests {
         resultActions = this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH7));
         // レスポンスを出力して、ステータスコードを検証
         resultActions
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk());
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk());
         // JSONの件数が3件であることを検証
         // リクエストボディを文字列(JSON)をJavaオブジェクトに変換して、Listのサイズをassert
         contentAsString = resultActions.andReturn().getResponse()
-            .getContentAsString(StandardCharsets.UTF_8);
+                                       .getContentAsString(StandardCharsets.UTF_8);
         itemResponseList = objectMapper.readValue(contentAsString,
-            new TypeReference<List<ItemResponse>>() {
-            });
+                                                  new TypeReference<List<ItemResponse>>() {
+                                                  });
         assertThat(itemResponseList, hasSize(2));
     }
 
@@ -210,7 +207,7 @@ class SpringBootDemoApplicationTests {
 
         // APIを実行してレスポンスを検証
         this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH))
-            .andDo(MockMvcResultHandlers.print())
-            .andExpect(status().isOk());
+                    .andDo(MockMvcResultHandlers.print())
+                    .andExpect(status().isOk());
     }
 }
