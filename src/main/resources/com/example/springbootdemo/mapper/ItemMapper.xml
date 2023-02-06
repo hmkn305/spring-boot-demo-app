@@ -3,12 +3,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springbootdemo.mapper.ItemMapper">
 
-  <select id="findById" resultType="com.example.springbootdemo.entity.Item">
-    SELECT
-    <include refid="selectColumns"/>
-    FROM item
-    WHERE id = #{id}
-  </select>
+  <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO item
+    SET
+    <include refid="insertColumns"/>
+  </insert>
 
   <select id="findAll" resultType="com.example.springbootdemo.entity.Item">
     SELECT
@@ -17,9 +16,21 @@
     ORDER BY id
   </select>
 
+  <select id="findById" resultType="com.example.springbootdemo.entity.Item">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM item
+    WHERE id = #{id}
+  </select>
+
   <sql id="selectColumns">
     `id`
     ,
     `item_name`
+  </sql>
+  <sql id="insertColumns">
+    `item_name`
+    =
+    #{item_name}
   </sql>
 </mapper>

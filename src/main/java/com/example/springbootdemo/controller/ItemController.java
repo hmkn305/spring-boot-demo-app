@@ -45,4 +45,18 @@ public class ItemController {
         return itemResponseList;
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public ItemResponse doPost(@RequestBody ItemRequest itemRequest) {
+
+        Item item = new Item();
+        BeanUtils.copyProperties(itemRequest, item);
+
+        itemMapper.insert(item);
+
+        ItemResponse itemResponse = new ItemResponse();
+        BeanUtils.copyProperties(item, itemResponse);
+
+        return itemResponse;
+    }
 }

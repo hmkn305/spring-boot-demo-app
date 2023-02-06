@@ -12,4 +12,6 @@ public interface ItemMapper {
 
     List<Item> findAll();
 
+    int insert(@Param("item") Item item);
+
 }
