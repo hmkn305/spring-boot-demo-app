@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="vueファイルの追加">
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
+    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="vueで簡易なフロント画面を生成">
+      <change afterPath="$PROJECT_DIR$/frontend/customer/src/service/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/config/WebSecurityConfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/components/HelloWorld.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/ItemController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -174,7 +177,8 @@
       <workItem from="1675650550430" duration="318000" />
       <workItem from="1675651016599" duration="4973000" />
       <workItem from="1675662243668" duration="16000" />
-      <workItem from="1675662273943" duration="20419000" />
+      <workItem from="1675662273943" duration="23179000" />
+      <workItem from="1675746097427" duration="3746000" />
     </task>
     <task id="LOCAL-00001" summary="first commit after create new IDEA project.">
       <created>1664966362594</created>
@@ -379,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675730657362</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="vueで簡易なフロント画面を生成">
+      <created>1675738187748</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1675738187748</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +425,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create new spring boot project." />
     <MESSAGE value="add hello Web API." />
     <MESSAGE value="add Web API Test." />
     <MESSAGE value="tiny fix." />
@@ -439,7 +449,8 @@
     <MESSAGE value="mygration(flyway)導入&#10;タイムゾーンをapplication.propaertiesに書くとバグる" />
     <MESSAGE value="findAllメソッド導入" />
     <MESSAGE value="vueファイルの追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="vueファイルの追加" />
+    <MESSAGE value="vueで簡易なフロント画面を生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="vueで簡易なフロント画面を生成" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

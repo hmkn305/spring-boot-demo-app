@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/api/users")
+@CrossOrigin
 public class ItemController {
 
     @Autowired
@@ -22,6 +23,8 @@ public class ItemController {
     public ItemResponse findById(@PathVariable int id) {
         // DBからidをキーにデータを取得
         Item item = itemMapper.findById(id);
+
+        System.out.println("バックエンドまで届いた");
 
         // Responseにデータをコピーしてreturn
         ItemResponse itemResponse = new ItemResponse();

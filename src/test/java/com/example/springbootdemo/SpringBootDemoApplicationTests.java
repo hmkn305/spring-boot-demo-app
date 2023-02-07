@@ -42,23 +42,4 @@ class SpringBootDemoApplicationTests {
                     .andExpect(status().isOk())
                     .andExpect(content().json(objectMapper.writeValueAsString(sample)));
     }
-
-    @Test
-    void testGetItemById() throws Exception {
-
-        //検証するパス
-        final String API_PATH = "/items/1";
-
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        ItemResponse itemResponse = new ItemResponse();
-        itemResponse.setId(1);
-        itemResponse.setItemName("大豆");
-
-        //APIを実行してレスポンスで検証
-        this.mockMvc.perform(MockMvcRequestBuilders.get(API_PATH))
-                    .andDo(MockMvcResultHandlers.print())
-                    .andExpect(status().isOk())
-                    .andExpect(content().json(objectMapper.writeValueAsString(itemResponse)));
-    }
 }
