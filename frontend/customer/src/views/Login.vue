@@ -1,12 +1,11 @@
 <template>
-  <div id="app">
-    <h1>Vue.js</h1>
-    <router-view/>
+  <div>
+    <h1>ログイン画面</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Login'
 }
 </script>
