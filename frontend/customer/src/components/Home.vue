@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>HOME画面</h1>
+    
   </div>
 </template>
 
