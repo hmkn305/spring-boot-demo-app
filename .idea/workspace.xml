@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="8081を開いたらホーム画面出力">
+    <list default="true" id="6e7c26be-4ae1-4f41-8eea-ac5881efa1a8" name="Changes" comment="vue.routerのバージョン変更">
+      <change afterPath="$PROJECT_DIR$/frontend/customer/src/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/customer/src/views" />
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -392,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675750205301</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="vue.routerのバージョン変更">
+      <created>1675761327938</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1675761327938</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Web API Test." />
     <MESSAGE value="tiny fix." />
     <MESSAGE value="CodeBuild仕様のbuildspec.ymlを新規追加" />
     <MESSAGE value="buildspec.ymlにブレークポイントを設定" />
@@ -452,7 +460,8 @@
     <MESSAGE value="vueファイルの追加" />
     <MESSAGE value="vueで簡易なフロント画面を生成" />
     <MESSAGE value="ホーム画面出力&#10;フロントのパラメータでidを送信してオブジェクトを取得" />
-    <option name="LAST_COMMIT_MESSAGE" value="ホーム画面出力&#10;フロントのパラメータでidを送信してオブジェクトを取得" />
+    <MESSAGE value="vue.routerのバージョン変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue.routerのバージョン変更" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -5,7 +5,19 @@
 </template>
 
 <script>
+
 export default {
-  name: 'Login'
+  name: 'Login',
+
+  async created() {
+    console.log("ログイン画面");
+  },
 }
 </script>
+
+<style scoped>
+div {
+  margin-top: 100px;
+  text-align: center;
+}
+</style>
