@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="docker">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_1__create_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/default.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/local/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/local/my.cnf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/local/mysql/docker-entrypoint-initdb.d/1_create_test_databases.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/local/mysql/start.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.2__insert_diary.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.01.00__create_init_tables.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.02.00__create_diary_tables.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +43,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringBootDemoApplication">
     <configuration name="V0.1.1__insert_init_users.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" />
       <script-mode>FILE</script-mode>
@@ -89,6 +82,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="local: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/local/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/customer/package.json" />
       <command value="run" />
@@ -102,12 +103,13 @@
     <list>
       <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
       <item itemvalue="Docker.docker.db: Compose Deployment" />
-      <item itemvalue="Docker.docker: Compose Deployment" />
+      <item itemvalue="Docker.local: Compose Deployment" />
       <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.SpringBootDemoApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.local: Compose Deployment" />
         <item itemvalue="Docker.docker: Compose Deployment" />
         <item itemvalue="Docker.docker.db: Compose Deployment" />
         <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
@@ -152,9 +154,16 @@
       <option name="presentableId" value="Default" />
       <updated>1675832403779</updated>
       <workItem from="1675832405693" duration="4023000" />
-      <workItem from="1675839327775" duration="2237000" />
+      <workItem from="1675839327775" duration="3554000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="docker">
+      <created>1675841842633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675841842633</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
