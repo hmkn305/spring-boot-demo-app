@@ -1,5 +1,0 @@
-CREATE DATABASE IF NOT EXISTS health_ut;
-GRANT ALL ON health_ut.* TO 'user';
-CREATE DATABASE IF NOT EXISTS health_e2e;
-GRANT ALL ON health_e2e.* TO 'user';
-FLUSH PRIVILEGES;
