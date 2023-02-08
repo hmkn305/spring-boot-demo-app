@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <router-link to="/">HOME</router-link>
-    <router-link to="/login">ログイン</router-link>
+    <router-link to="/" text-align="right">HOMEへ戻る</router-link>
     <router-view/>
   </div>
 </template>

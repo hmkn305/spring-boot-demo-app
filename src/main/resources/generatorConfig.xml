@@ -20,6 +20,6 @@
             targetProject="src/main/java"
             type="XMLMAPPER"/>
 
-        <table tableName="item" mapperName="DemoMapper"/>
+        <table tableName="user" mapperName="DemoMapper"/>
     </context>
 </generatorConfiguration>

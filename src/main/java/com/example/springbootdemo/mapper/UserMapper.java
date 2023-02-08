@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.*;
 import java.util.*;
 
 @Mapper
-public interface ItemMapper {
+public interface UserMapper {
 
-    Item findById(int id);
+    User getUser(String email, String password);
 
-    List<Item> findAll();
+    List<User> findAll();
 
-    int insert(@Param("item") Item item);
+    int insert(@Param("item") User user);
 
 }

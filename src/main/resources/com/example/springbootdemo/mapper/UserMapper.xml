@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.UserMapper">
+
+  <select id="getUser" resultType="com.example.springbootdemo.entity.User">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM users
+    WHERE email = #{email} AND password = #{password}
+  </select>
+
+  <sql id="selectColumns">
+    `id`,
+    `name`,
+    `email`,
+    `password`
+  </sql>
+  <sql id="insertColumns">
+    `name`
+    =
+    #{name}
+  </sql>
+</mapper>

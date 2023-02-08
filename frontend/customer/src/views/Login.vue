@@ -1,17 +1,66 @@
 <template>
   <div class="login">
     <h1>ログイン画面</h1>
+    <div>
+      <b-form-group
+          id="email"
+          label="メールアドレス">
+        <b-form-input
+            id="email"
+            v-model="form.email"
+            type="email"
+            required>
+        </b-form-input>
+      </b-form-group>
+      <b-form-group
+          id="password"
+          label="パスワード">
+        <b-form-input
+            id="password"
+            v-model="form.password"
+            type="password"
+            required>
+        </b-form-input>
+      </b-form-group>
+      <b-button
+          type="submit"
+          variant="primary"
+          @click="findByEmailAndPassword(form.email, form.password)"
+          >GO</b-button>
+    </div>
   </div>
 </template>
 
 <script>
 
+import {findByEmailAndPassword} from "@/service/login";
+
 export default {
   name: 'Login',
-
+  data() {
+    return {
+      form: {
+        email: '',
+        password: '',
+      }
+    }
+  },
   async created() {
     console.log("ログイン画面");
   },
+  methods: {
+    async findByEmailAndPassword() {
+      let results = [];
+      let done;
+      try {
+        done = await findByEmailAndPassword(this.form.email, this.form.password);
+        results = done.data;
+        console.log(results);
+      } catch {
+        console.log("エラー");
+      }
+    }
+  }
 }
 </script>
 
