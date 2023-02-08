@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="bootstrapインストール">
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/assets/css/app.css" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="クラス名変更&#10;データベース変更">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.2__insert_diary.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.02.00__create_diary_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/UserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/ItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/ItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.01.00__create_init_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/definition/V00.01.00__create_init_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/example/mapper/DemoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +28,38 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.SpringBootDemoApplication">
+    <configuration name="V0.1.1__insert_init_users.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="SpringBootDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springbootdemo.SpringBootDemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="local: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/local/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="local.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/local/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/customer/package.json" />
@@ -61,11 +72,17 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
+      <item itemvalue="Docker.local.db: Compose Deployment" />
+      <item itemvalue="Docker.local: Compose Deployment" />
       <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.SpringBootDemoApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
+        <item itemvalue="Docker.local.db: Compose Deployment" />
+        <item itemvalue="Docker.local: Compose Deployment" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -85,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675817892723</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="クラス名変更&#10;データベース変更">
+      <created>1675823022867</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675823022867</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,7 +126,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="vuetifyインストール" />
     <MESSAGE value="bootstrapインストール" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrapインストール" />
+    <MESSAGE value="クラス名変更&#10;データベース変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="クラス名変更&#10;データベース変更" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
