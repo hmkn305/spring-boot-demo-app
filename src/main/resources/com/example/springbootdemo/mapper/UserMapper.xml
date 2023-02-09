@@ -6,7 +6,7 @@
   <select id="getUser" resultType="com.example.springbootdemo.entity.User">
     SELECT
     <include refid="selectColumns"/>
-    FROM users
+    FROM accounts
     WHERE email = #{email} AND password = #{password}
   </select>
 

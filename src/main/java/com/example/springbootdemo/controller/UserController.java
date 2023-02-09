@@ -22,7 +22,6 @@ public class UserController {
     public UserResponse getUser(@NotNull @RequestParam("email") String mailAddress,
                                 @NotNull @RequestParam("password") String password){
         User user = userMapper.getUser(mailAddress, password);
-
         UserResponse userResponse = new UserResponse();
         BeanUtils.copyProperties(user, userResponse);
         return userResponse;

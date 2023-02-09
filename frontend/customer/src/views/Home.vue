@@ -21,9 +21,5 @@ export default {
 }
 </script>
 
-<style scoped>
-div {
-  margin-top: 100px;
-  text-align: center;
-}
-</style>
+
+

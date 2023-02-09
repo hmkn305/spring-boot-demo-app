@@ -55,6 +55,9 @@ export default {
       try {
         done = await findByEmailAndPassword(this.form.email, this.form.password);
         results = done.data;
+        if(results.userId !=null){
+         await this.$router.push({name: 'Account'});
+        }
         console.log(results);
       } catch {
         console.log("エラー");

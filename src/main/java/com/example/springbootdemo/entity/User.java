@@ -6,5 +6,6 @@ import lombok.*;
 public class User {
 
     Integer id;
+    Integer userId;
     String name;
 }
