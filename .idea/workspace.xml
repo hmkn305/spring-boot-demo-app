@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく">
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="ログインできた時にマイページに遷移する実装">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +124,8 @@
       <workItem from="1675832405693" duration="4023000" />
       <workItem from="1675839327775" duration="3615000" />
       <workItem from="1675843637649" duration="4313000" />
-      <workItem from="1675900882757" duration="2403000" />
+      <workItem from="1675900882757" duration="2456000" />
+      <workItem from="1675903363567" duration="2022000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -166,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675902194393</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ログインできた時にマイページに遷移する実装">
+      <created>1675903347783</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675903347783</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +192,8 @@
     <MESSAGE value="クラス名変更&#10;データベース変更" />
     <MESSAGE value="docker" />
     <MESSAGE value="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく" />
-    <option name="LAST_COMMIT_MESSAGE" value="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく" />
+    <MESSAGE value="ログインできた時にマイページに遷移する実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="ログインできた時にマイページに遷移する実装" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
