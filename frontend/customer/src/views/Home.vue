@@ -8,6 +8,13 @@
         ログイン
       </router-link>
     </b-button>
+    <b-button
+        size="lg"
+        variant="outline-primary">
+      <router-link to="/signup">
+        新規登録
+      </router-link>
+    </b-button>
   </div>
 </template>
 
@@ -21,5 +28,9 @@ export default {
 }
 </script>
 
-
-
+<style scoped>
+div {
+  margin-top: 100px;
+  text-align: center;
+}
+</style>
