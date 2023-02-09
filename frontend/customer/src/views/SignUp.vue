@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import {postAccountInfo} from "@/service/login";
+import {postAccountInfo} from "@/service/SignService";
 
 export default {
   name: 'SignUp',

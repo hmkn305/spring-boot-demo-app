@@ -33,7 +33,7 @@
 
 <script>
 
-import {findByEmailAndPassword} from "@/service/login";
+import {findByEmailAndPassword} from "@/service/SignService";
 import router from "@/router";
 
 export default {
@@ -57,7 +57,7 @@ export default {
         done = await findByEmailAndPassword(this.form.email, this.form.password);
         results = done.data;
         if(results.id !=null){
-         await router.push({name: 'Account', params: {name: results.name}});
+         await router.push({name: 'Account', params: {name: results.name, id: results.id}});
         }
         console.log(results);
       } catch {

@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="新規登録機能のフロント部分のみを記述">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/requests/CreateAccountRequest.java" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="新規登録機能のバックエンド側を実装">
+      <change afterPath="$PROJECT_DIR$/frontend/customer/src/service/DateService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/customer/src/service/HealthDiaryService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/constants/PatternConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/SignService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/Sample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_1__create_users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_1__create_users.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1675839327775" duration="3615000" />
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
-      <workItem from="1675903363567" duration="8859000" />
+      <workItem from="1675903363567" duration="15298000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675906655748</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="新規登録機能のバックエンド側を実装">
+      <created>1675912977576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675912977576</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +221,8 @@
     <MESSAGE value="ログインできた時にマイページに遷移する実装" />
     <MESSAGE value="ログイン成功後のルーティング処理&#10;パラメータを渡して「〜さん、こんにちは」と表示" />
     <MESSAGE value="新規登録機能のフロント部分のみを記述" />
-    <option name="LAST_COMMIT_MESSAGE" value="新規登録機能のフロント部分のみを記述" />
+    <MESSAGE value="新規登録機能のバックエンド側を実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="新規登録機能のバックエンド側を実装" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
