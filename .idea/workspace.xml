@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="docker">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,47 +57,13 @@
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.local: Compose Deployment">
-    <configuration name="V0.1.1__insert_init_users.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/src/main/resources/db/migration/data/local/V0.1.1__insert_init_users.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.SpringBootDemoApplication">
     <configuration name="SpringBootDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springbootdemo.SpringBootDemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="local: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker/local/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
     </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/customer/package.json" />
@@ -100,19 +76,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
-      <item itemvalue="Docker.docker: Compose Deployment" />
-      <item itemvalue="Docker.docker.db: Compose Deployment" />
-      <item itemvalue="Docker.local: Compose Deployment" />
       <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.SpringBootDemoApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.local: Compose Deployment" />
-        <item itemvalue="Docker.docker: Compose Deployment" />
-        <item itemvalue="Docker.docker.db: Compose Deployment" />
-        <item itemvalue="Database Script.V0.1.1__insert_init_users.sql" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -156,7 +124,7 @@
       <workItem from="1675832405693" duration="4023000" />
       <workItem from="1675839327775" duration="3615000" />
       <workItem from="1675843637649" duration="4313000" />
-      <workItem from="1675900882757" duration="332000" />
+      <workItem from="1675900882757" duration="997000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -179,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675848801720</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく">
+      <created>1675901713371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675901713371</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +176,8 @@
     <MESSAGE value="bootstrapインストール" />
     <MESSAGE value="クラス名変更&#10;データベース変更" />
     <MESSAGE value="docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker" />
+    <MESSAGE value="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく" />
+    <option name="LAST_COMMIT_MESSAGE" value="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

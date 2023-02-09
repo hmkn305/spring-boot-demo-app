@@ -12,6 +12,7 @@
 
   <sql id="selectColumns">
     `id`,
+    `user_id`,
     `name`,
     `email`,
     `password`

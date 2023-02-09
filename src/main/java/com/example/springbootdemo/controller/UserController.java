@@ -35,7 +35,7 @@ public class UserController {
         User user = new User();
         BeanUtils.copyProperties(userRequest, user);
 
-        userMapper.insert(user);
+        //userMapper.insert(user);
 
         UserResponse userResponse = new UserResponse();
         BeanUtils.copyProperties(user, userResponse);

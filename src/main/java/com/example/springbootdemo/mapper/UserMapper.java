@@ -9,9 +9,4 @@ import java.util.*;
 public interface UserMapper {
 
     User getUser(String email, String password);
-
-    List<User> findAll();
-
-    int insert(@Param("item") User user);
-
 }
