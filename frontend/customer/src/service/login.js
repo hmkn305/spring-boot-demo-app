@@ -10,14 +10,16 @@ export const findByEmailAndPassword = (email, password) => {
   });
 };
 
-export const postAccountInfo = (name, email, password) => {
-  const url = `http://localhost:8080/api/users`;
-  console.log(name);
+export const postAccountInfo = (form) => {
+  const url = `http://localhost:8080/api/users/signup`;
+  console.log(form.email);
   return axios.post(url, {
-    params: {
-      name: name,
-      email: email,
-      password: password,
-    }
+    name: form.name,
+    email: form.email,
+    password: form.password,
+  }, {
+    headers: {
+      'content-type': 'application/json',
+    },
   });
 };

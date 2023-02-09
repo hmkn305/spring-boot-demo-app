@@ -10,16 +10,19 @@
     WHERE email = #{email} AND password = #{password}
   </select>
 
+  <insert id="postUser" useGeneratedKeys="true" keyColumn="id">
+    INSERT INTO `accounts`
+    SET <include refid="insertColumns"/>
+  </insert>
   <sql id="selectColumns">
     `id`,
-    `user_id`,
     `name`,
     `email`,
     `password`
   </sql>
   <sql id="insertColumns">
-    `name`
-    =
-    #{name}
+    `name`     = #{name},
+    `email`    = #{email},
+    `password` = #{password}
   </sql>
 </mapper>

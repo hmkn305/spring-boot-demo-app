@@ -57,8 +57,10 @@ export default {
   },
   methods: {
      async postAccountInfo(){
-       const res = await postAccountInfo(this.form.name,this.form.email, this.form.password);
-       console.log(res);
+       let results = [];
+       const res = await postAccountInfo(this.form);
+       results = res.data;
+       console.log(results);
      }
   }
 }

@@ -1,5 +1,6 @@
-package com.example.springbootdemo.controller;
+package com.example.springbootdemo.controllers.accounts;
 
+import com.example.springbootdemo.controllers.accounts.requests.*;
 import com.example.springbootdemo.dto.*;
 import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.mapper.*;
@@ -7,6 +8,7 @@ import org.jetbrains.annotations.*;
 import org.springframework.beans.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,21 +26,13 @@ public class UserController {
         User user = userMapper.getUser(mailAddress, password);
         UserResponse userResponse = new UserResponse();
         BeanUtils.copyProperties(user, userResponse);
+        System.out.println("バックエンド");
         return userResponse;
     }
 
-    @PostMapping
+    @PostMapping("/signup")
     @ResponseStatus(HttpStatus.OK)
-    public UserResponse doPost(@RequestBody UserRequest userRequest) {
-
-        User user = new User();
-        BeanUtils.copyProperties(userRequest, user);
-
-        //userMapper.insert(user);
-
-        UserResponse userResponse = new UserResponse();
-        BeanUtils.copyProperties(user, userResponse);
-
-        return userResponse;
+    public void postUser(@RequestBody @Validated CreateAccountRequest request) {
+        userMapper.postUser(request);
     }
 }
