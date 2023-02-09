@@ -2,6 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springbootdemo.mapper.UserMapper">
+  <sql id="selectColumns">
+    `id`,
+    `name`,
+    `email`,
+    `password`
+  </sql>
+  <sql id="insertColumns">
+    `name`     = #{name},
+    `email`    = #{email},
+    `password` = #{password}
+  </sql>
 
   <select id="getUser" resultType="com.example.springbootdemo.entity.User">
     SELECT
@@ -14,15 +25,4 @@
     INSERT INTO `accounts`
     SET <include refid="insertColumns"/>
   </insert>
-  <sql id="selectColumns">
-    `id`,
-    `name`,
-    `email`,
-    `password`
-  </sql>
-  <sql id="insertColumns">
-    `name`     = #{name},
-    `email`    = #{email},
-    `password` = #{password}
-  </sql>
 </mapper>

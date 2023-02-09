@@ -46,9 +46,6 @@ export default {
       }
     }
   },
-  async created() {
-    console.log("ログイン画面");
-  },
   methods: {
     async findByEmailAndPassword() {
       let results = [];

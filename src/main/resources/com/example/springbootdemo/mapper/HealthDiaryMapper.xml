@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.HealthDiaryMapper">
+  <sql id="selectColumns">
+    `id`,
+    `user_id`,
+    `weight`,
+    `distinct_date`
+  </sql>
+<select id="getHealthDiary" resultType="com.example.springbootdemo.entity.HealthDiary">
+  SELECT
+  <include refid="selectColumns"/>
+  FROM health_diary
+  WHERE user_id = #{userId} AND distinct_date =#{date}
+</select>
+</mapper>
