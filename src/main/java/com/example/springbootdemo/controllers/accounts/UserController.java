@@ -4,6 +4,7 @@ import com.example.springbootdemo.controllers.accounts.requests.*;
 import com.example.springbootdemo.dto.*;
 import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.mapper.*;
+import com.example.springbootdemo.service.*;
 import org.jetbrains.annotations.*;
 import org.springframework.beans.*;
 import org.springframework.beans.factory.annotation.*;
@@ -17,13 +18,13 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    UserMapper userMapper;
+    UserService userService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public UserResponse getUser(@NotNull @RequestParam("email") String mailAddress,
                                 @NotNull @RequestParam("password") String password){
-        User user = userMapper.getUser(mailAddress, password);
+        User user = userService.getUser(mailAddress, password);
         UserResponse userResponse = new UserResponse();
         BeanUtils.copyProperties(user, userResponse);
         System.out.println("バックエンド");
@@ -33,6 +34,6 @@ public class UserController {
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.OK)
     public void postUser(@RequestBody @Validated CreateAccountRequest request) {
-        userMapper.postUser(request);
+        userService.postUser(request);
     }
 }
