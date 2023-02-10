@@ -2,10 +2,8 @@ package com.example.springbootdemo.controllers.accounts;
 
 import com.example.springbootdemo.controllers.accounts.requests.*;
 import com.example.springbootdemo.dto.*;
-import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.service.*;
 import org.jetbrains.annotations.*;
-import org.springframework.beans.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.validation.annotation.*;

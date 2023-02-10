@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="ログインエラー時の対応&#10;フロントエンド側">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="新規登録時の対応&#10;バックエンド側">
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,7 @@
       <workItem from="1675839327775" duration="3615000" />
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
-      <workItem from="1675903363567" duration="32294000" />
+      <workItem from="1675903363567" duration="32632000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675995397617</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="新規登録時の対応&#10;バックエンド側">
+      <created>1675995905052</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1675995905052</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +263,8 @@
     <MESSAGE value="新規登録機能とmodal,カレンダー、体重確認のAPI実装" />
     <MESSAGE value="ログインエラー時の対応&#10;バックエンド側" />
     <MESSAGE value="ログインエラー時の対応&#10;フロントエンド側" />
-    <option name="LAST_COMMIT_MESSAGE" value="ログインエラー時の対応&#10;フロントエンド側" />
+    <MESSAGE value="新規登録時の対応&#10;バックエンド側" />
+    <option name="LAST_COMMIT_MESSAGE" value="新規登録時の対応&#10;バックエンド側" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -2,6 +2,14 @@
   <div class="login">
     <h1>新規登録画面</h1>
     <div>
+      <b-alert
+          variant="danger"
+          dismissible
+          fade
+          :show="showDismissibleAlert"
+      >
+        {{  errorMessage }}
+      </b-alert>
       <b-form-group
           id="name"
           label="名前">
@@ -43,6 +51,7 @@
 
 <script>
 import {postAccountInfo} from "@/service/SignService";
+import router from "@/router";
 
 export default {
   name: 'SignUp',
@@ -52,7 +61,9 @@ export default {
         name: '',
         email: '',
         password: '',
-      }
+      },
+      showDismissibleAlert: false,
+      errorMessage: '',
     }
   },
   methods: {
@@ -60,7 +71,12 @@ export default {
        let results = [];
        const res = await postAccountInfo(this.form);
        results = res.data;
-       console.log(results);
+       if(results.errorType == null){
+         await router.push({name: 'Account'});
+       } else {
+         this.showDismissibleAlert = true;
+         this.errorMessage = results.errorType;
+       }
      }
   }
 }
