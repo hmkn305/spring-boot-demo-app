@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.OK)
-    public void postUser(@RequestBody @Validated CreateAccountRequest request) {
-        userService.postUser(request);
+    public UserResponse postUser(@RequestBody @Validated CreateAccountRequest request) {
+        return userService.postUser(request);
     }
 }

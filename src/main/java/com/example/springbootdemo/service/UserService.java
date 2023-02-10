@@ -9,8 +9,6 @@ import org.springframework.beans.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
-import java.util.*;
-
 @Service
 public class UserService {
 
@@ -18,8 +16,6 @@ public class UserService {
     UserMapper userMapper;
 
     public UserResponse getUser(String mailAddress, String password) {
-        List<User> users = userMapper.getAllUsers();
-        System.out.println(users);
         boolean isPresent = userMapper.getAllUsers()
                                       .stream()
                                       .anyMatch(x -> x.getEmail().equals(mailAddress));
@@ -35,7 +31,19 @@ public class UserService {
         }
     }
 
-    public void postUser(CreateAccountRequest request) {
-        userMapper.postUser(request);
+    public UserResponse postUser(CreateAccountRequest request) {
+        boolean isPresent = userMapper.getAllUsers()
+                                      .stream()
+                                      .anyMatch(x -> x.getEmail().equals(request.getEmail()));
+        if (isPresent) {
+            UserResponse userResponse = new UserResponse();
+            userResponse.setErrorType(SignInErrorType.AlreadyRegisteredEmail.getLabel());
+            return userResponse;
+        } else {
+            userMapper.postUser(request);
+            UserResponse userResponse = new UserResponse();
+            userResponse.setName(request.getName());
+            return userResponse;
+        }
     }
 }
