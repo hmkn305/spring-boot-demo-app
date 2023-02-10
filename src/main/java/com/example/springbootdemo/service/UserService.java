@@ -30,7 +30,7 @@ public class UserService {
             return userResponse;
         } else {
             UserResponse userResponse = new UserResponse();
-            userResponse.setErrorType(SignInErrorType.NotRegisteredEmail);
+            userResponse.setErrorType(SignInErrorType.NotRegisteredEmail.getLabel());
             return userResponse;
         }
     }

@@ -2,6 +2,14 @@
   <div class="login">
     <h1>ログイン画面</h1>
     <div>
+      <b-alert
+          variant="danger"
+          dismissible
+          fade
+          :show="showDismissibleAlert"
+      >
+        {{  errorMessage }}
+      </b-alert>
       <b-form-group
           id="email"
           label="メールアドレス">
@@ -43,7 +51,9 @@ export default {
       form: {
         email: '',
         password: '',
-      }
+      },
+      showDismissibleAlert: false,
+      errorMessage: '',
     }
   },
   methods: {
@@ -53,10 +63,12 @@ export default {
       try {
         done = await findByEmailAndPassword(this.form.email, this.form.password);
         results = done.data;
-        if(results.id !=null){
+        if(results.errorType == null){
          await router.push({name: 'Account', params: {name: results.name, id: results.id}});
+        } else {
+          this.showDismissibleAlert = true;
+          this.errorMessage = results.errorType;
         }
-        console.log(results);
       } catch {
         console.log("エラー");
       }
