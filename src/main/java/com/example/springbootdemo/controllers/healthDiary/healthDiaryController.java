@@ -30,7 +30,7 @@ public class healthDiaryController {
         HealthDiary healthDiary = healthDiaryService.getHealthDiary(userId, date);
         HealthDiaryResponse healthDiaryResponse = new HealthDiaryResponse();
         BeanUtils.copyProperties(healthDiary, healthDiaryResponse);
-        System.out.println(healthDiaryResponse);
         return healthDiaryResponse;
     }
+
 }

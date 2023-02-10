@@ -23,11 +23,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public UserResponse getUser(@NotNull @RequestParam("email") String mailAddress,
                                 @NotNull @RequestParam("password") String password){
-        User user = userService.getUser(mailAddress, password);
-        UserResponse userResponse = new UserResponse();
-        BeanUtils.copyProperties(user, userResponse);
-        System.out.println("バックエンド");
-        return userResponse;
+        return userService.getUser(mailAddress, password);
     }
 
     @PostMapping("/signup")

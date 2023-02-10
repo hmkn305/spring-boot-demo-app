@@ -9,6 +9,8 @@ import java.util.*;
 @Mapper
 public interface UserMapper {
 
+    List<User> getAllUsers();
+
     User getUser(String email, String password);
 
     void postUser(CreateAccountRequest request);

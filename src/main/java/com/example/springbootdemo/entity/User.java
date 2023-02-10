@@ -8,4 +8,6 @@ public class User {
     Integer id;
     Integer userId;
     String name;
+    String email;
+    String password;
 }
