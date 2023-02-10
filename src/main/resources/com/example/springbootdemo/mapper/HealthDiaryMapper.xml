@@ -8,10 +8,31 @@
     `weight`,
     `distinct_date`
   </sql>
+  <sql id="insertColumns">
+    `user_id`        = #{userId},
+    `weight`         = #{weight},
+    `distinct_date`  = #{distinctDate}
+  </sql>
+  <sql id="updateColumns">
+    `user_id`          = #{userId},
+    `weight`           = #{weight},
+    `distinct_date`    = #{distinctDate},
+    `updated_at`       = NOW()
+  </sql>
+
 <select id="getHealthDiary" resultType="com.example.springbootdemo.entity.HealthDiary">
   SELECT
   <include refid="selectColumns"/>
   FROM health_diary
-  WHERE user_id = #{userId} AND distinct_date =#{date}
+  WHERE user_id = #{userId} AND distinct_date =#{distinctDate}
 </select>
+  <insert id="createWeightInfo" useGeneratedKeys="true" keyColumn="id">
+    INSERT INTO `health_diary`
+    SET <include refid="insertColumns"/>
+  </insert>
+  <update id="updateWeightInfo">
+    UPDATE `health_diary`
+    SET <include refid="updateColumns"/>
+    WHERE `user_id` = #{userId} AND distinct_date =#{distinctDate}
+  </update>
 </mapper>

@@ -9,5 +9,9 @@ import java.util.*;
 @Mapper
 public interface HealthDiaryMapper {
 
-    HealthDiary getHealthDiary(Integer userId, LocalDate date);
+    Optional<HealthDiary> getHealthDiary(Integer userId, LocalDate distinctDate);
+
+    void createWeightInfo(HealthDiary healthDiary);
+
+    void updateWeightInfo(HealthDiary healthDiary);
 }

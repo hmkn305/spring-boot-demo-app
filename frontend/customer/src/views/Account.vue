@@ -85,10 +85,8 @@ export default {
       try{
         done = await getHealthDiaryByIdAndDate(this.userInfo.id, this.selectedDate);
         results = done.data;
-        console.log(results);
         this.returnInfo.weight = results.weight;
         this.returnInfo.distinctDate = results.distinctDate;
-        console.log(this.returnInfo.weight);
         this.insertOrModifyButton = '修正'
         if (this.returnInfo.weight == null) {
           this.returnInfo.weight = '';

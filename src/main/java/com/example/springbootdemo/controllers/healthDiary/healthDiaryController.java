@@ -1,5 +1,6 @@
 package com.example.springbootdemo.controllers.healthDiary;
 
+import com.example.springbootdemo.controllers.healthDiary.requests.*;
 import com.example.springbootdemo.dto.*;
 import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.service.*;
@@ -28,6 +29,12 @@ public class healthDiaryController {
     public HealthDiary getHealthDiary(@NotNull @RequestParam("id") Integer userId,
                                               @Validated @NotNull @RequestParam(name = "date", required = false) @DateTimeFormat(pattern = ISO_LOCAL_DATE_PATTERN) LocalDate date){
         return healthDiaryService.getHealthDiary(userId, date);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void postWeightInfo(@RequestBody @Validated CreateWeightRequest request){
+        healthDiaryService.postWeightInfo(request);
     }
 
 }
