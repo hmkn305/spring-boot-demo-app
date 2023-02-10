@@ -71,6 +71,7 @@ export default {
        let results = [];
        const res = await postAccountInfo(this.form);
        results = res.data;
+       console.log(results);
        if(results.errorType == null){
          await router.push({name: 'Account'});
        } else {

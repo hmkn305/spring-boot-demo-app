@@ -12,7 +12,6 @@ export const findByEmailAndPassword = (email, password) => {
 
 export const postAccountInfo = (form) => {
   const url = `http://localhost:8080/api/users/signup`;
-  console.log(form.email);
   return axios.post(url, {
     name: form.name,
     email: form.email,

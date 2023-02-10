@@ -25,7 +25,12 @@
     FROM accounts
     WHERE email = #{email} AND password = #{password}
   </select>
-
+  <select id="getUserByEmail" resultType="com.example.springbootdemo.entity.User">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM accounts
+    WHERE email = #{email}
+  </select>
   <insert id="postUser" useGeneratedKeys="true" keyColumn="id">
     INSERT INTO `accounts`
     SET <include refid="insertColumns"/>

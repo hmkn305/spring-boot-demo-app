@@ -4,42 +4,61 @@
       <h1>マイページ</h1>
       <h2>こんにちは、{{ userInfo.name }}さん</h2>
     </div>
-        <b-calendar
-            @context="onContext"
-            class="calender mb-5"
-            selected-variant="primary"
-            locale="ja"
-            label-help=""
-            hide-header
-            label-prev-year="前年"
-            label-prev-month="前月"
-            label-current-month="当月"
-            label-next-month="次月"
-            label-next-year="次年"
-            nav-button-variant="dark"
-            block
-        ></b-calendar>
+    <b-calendar
+        v-model="selectedDate"
+        class="calender mb-5"
+        selected-variant="primary"
+        locale="ja"
+        label-help=""
+        hide-header
+        label-prev-year="前年"
+        label-prev-month="前月"
+        label-current-month="当月"
+        label-next-month="次月"
+        label-next-year="次年"
+        nav-button-variant="dark"
+        block
+    ></b-calendar>
+    <b-button v-b-modal.editor
+              @click="setDate">確認
+    </b-button>
+
+    <b-modal id="editor" title="体重確認">
+      <b-form>
+        <b-form-group>
+          <label class="font-weight-bold">日付</label>
+          <p id="date">{{ selectedDate }} </p>
+
+          <b-form-group>
+            <label class="font-weight-bold">体重</label>
+            <b-form-input
+                id="weight"
+                v-model="returnInfo.weight"
+            >
+              kg
+            </b-form-input>
+          </b-form-group>
+        </b-form-group>
+
         <div>
-          <b-button v-b-modal.modal-1>確認</b-button>
-          <b-modal id="modal-1" title="体重確認">
-            <p class="my-4">日付 : {{ returnInfo.distinctDate }}
-                            体重  :  {{ returnInfo.weight}} kgです</p>
-          </b-modal>
+          <b-button
+          @click="changeWeightInfo">{{ insertOrModifyButton }}</b-button>
         </div>
-        <div class="row justify-content-center mb-3">
-          <b-button id="date-cancel-btn" type="reset" variant="outline-primary" class="w-25 mr-5">キャンセル</b-button>
-          <b-button id="date-submit-btn" type="submit" variant="primary" class="w-25">変更</b-button>
-        </div>
+      </b-form>
+    </b-modal>
   </b-container>
 </template>
 
 <script>
 import {getHealthDiaryByIdAndDate} from "@/service/HealthDiaryService";
+import {postWeightInfo} from "@/service/HealthDiaryService";
 
 export default {
   name: 'Account',
   data() {
     return {
+      selectedDate: '',
+      insertOrModifyButton: '修正',
       userInfo: {
         id: '',
         name: '',
@@ -56,35 +75,36 @@ export default {
     this.userInfo.id = this.$route.params.id;
   },
   methods: {
-    onContext(ctx) {
-      this.context = ctx;
-      if(this.context.selectedYMD !== '') {
-        try {
-          this.getHealthDiaryByIdAndDate(this.context);
-        } catch {
-          console.log("エラー");
-        }
-      } else {
-        console.log("日付なし");
-      }
+    setDate() {
+      this.getHealthDiaryByIdAndDate(this.selectedDate);
+      this.returnInfo.distinctDate = this.selectedDate;
     },
-    async getHealthDiaryByIdAndDate(x) {
+    async getHealthDiaryByIdAndDate() {
       let done;
       let results = [];
-      console.log(x.selectedYMD);
-      console.log(this.userInfo.id);
-      try {
-        done = await getHealthDiaryByIdAndDate(this.userInfo.id, this.context.selectedYMD);
+      try{
+        done = await getHealthDiaryByIdAndDate(this.userInfo.id, this.selectedDate);
         results = done.data;
+        console.log(results);
         this.returnInfo.weight = results.weight;
         this.returnInfo.distinctDate = results.distinctDate;
-        console.log(results)
-      } catch {
+        console.log(this.returnInfo.weight);
+        this.insertOrModifyButton = '修正'
+        if (this.returnInfo.weight == null) {
+          this.returnInfo.weight = '';
+          this.insertOrModifyButton = '追加';
+        }
+      }catch {
         console.log("error");
       }
+    },
+    changeWeightInfo(){
+      let request = [];
+      request = {id: this.userInfo.id, weight: this.returnInfo.weight, date: this.selectedDate};
+      postWeightInfo(request);
     }
-  }
-};
+  },
+}
 
 </script>
 

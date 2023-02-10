@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="新規登録時の対応&#10;バックエンド側">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="新規登録時の対応&#10;フロントエンド側">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/HealthDiaryService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/HealthDiaryService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/SignService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/SignService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/accounts/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/type/SignInErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/type/SignInErrorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +133,7 @@
       <workItem from="1675839327775" duration="3615000" />
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
-      <workItem from="1675903363567" duration="32632000" />
+      <workItem from="1675903363567" duration="44010000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -231,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675995905052</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="新規登録時の対応&#10;フロントエンド側">
+      <created>1675996186931</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1675996186931</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +280,8 @@
     <MESSAGE value="ログインエラー時の対応&#10;バックエンド側" />
     <MESSAGE value="ログインエラー時の対応&#10;フロントエンド側" />
     <MESSAGE value="新規登録時の対応&#10;バックエンド側" />
-    <option name="LAST_COMMIT_MESSAGE" value="新規登録時の対応&#10;バックエンド側" />
+    <MESSAGE value="新規登録時の対応&#10;フロントエンド側" />
+    <option name="LAST_COMMIT_MESSAGE" value="新規登録時の対応&#10;フロントエンド側" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

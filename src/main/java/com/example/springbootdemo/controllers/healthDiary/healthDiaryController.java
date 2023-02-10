@@ -25,12 +25,9 @@ public class healthDiaryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public HealthDiaryResponse getHealthDiary(@NotNull @RequestParam("id") Integer userId,
+    public HealthDiary getHealthDiary(@NotNull @RequestParam("id") Integer userId,
                                               @Validated @NotNull @RequestParam(name = "date", required = false) @DateTimeFormat(pattern = ISO_LOCAL_DATE_PATTERN) LocalDate date){
-        HealthDiary healthDiary = healthDiaryService.getHealthDiary(userId, date);
-        HealthDiaryResponse healthDiaryResponse = new HealthDiaryResponse();
-        BeanUtils.copyProperties(healthDiary, healthDiaryResponse);
-        return healthDiaryResponse;
+        return healthDiaryService.getHealthDiary(userId, date);
     }
 
 }
