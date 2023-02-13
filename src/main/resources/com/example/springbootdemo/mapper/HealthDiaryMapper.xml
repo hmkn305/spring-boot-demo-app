@@ -26,7 +26,7 @@
   FROM health_diary
   WHERE user_id = #{userId} AND distinct_date =#{distinctDate}
 </select>
-  <insert id="createWeightInfo" useGeneratedKeys="true" keyColumn="id">
+  <insert id="createWeightInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
     INSERT INTO `health_diary`
     SET <include refid="insertColumns"/>
   </insert>

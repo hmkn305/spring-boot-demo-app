@@ -11,7 +11,7 @@ public interface HealthDiaryMapper {
 
     Optional<HealthDiary> getHealthDiary(Integer userId, LocalDate distinctDate);
 
-    void createWeightInfo(HealthDiary healthDiary);
+    int createWeightInfo(HealthDiary healthDiary);
 
-    void updateWeightInfo(HealthDiary healthDiary);
+    int updateWeightInfo(HealthDiary healthDiary);
 }

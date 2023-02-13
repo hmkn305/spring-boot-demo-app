@@ -12,9 +12,6 @@ export const getHealthDiaryByIdAndDate = (id, date) =>{
 
 export const postWeightInfo = (request) => {
   const url = `http://localhost:8080/api/diary`;
-  console.log(request.id);
-  console.log(request.weight);
-  console.log(request.date);
   return axios.post(url, {
     id: request.id,
     weight: request.weight,

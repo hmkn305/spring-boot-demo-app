@@ -1,11 +1,9 @@
 package com.example.springbootdemo.controllers.healthDiary;
 
 import com.example.springbootdemo.controllers.healthDiary.requests.*;
-import com.example.springbootdemo.dto.*;
 import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.service.*;
 import org.jetbrains.annotations.*;
-import org.springframework.beans.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.format.annotation.*;
 import org.springframework.http.*;
@@ -33,8 +31,7 @@ public class healthDiaryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void postWeightInfo(@RequestBody @Validated CreateWeightRequest request){
-        healthDiaryService.postWeightInfo(request);
+    public int postWeightInfo(@RequestBody @Validated CreateWeightRequest request){
+        return healthDiaryService.postWeightInfo(request);
     }
-
 }

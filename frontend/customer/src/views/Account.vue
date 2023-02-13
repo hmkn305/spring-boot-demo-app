@@ -23,26 +23,36 @@
               @click="setDate">確認
     </b-button>
 
-    <b-modal id="editor" title="体重確認">
+    <b-modal id="editor" title="体重確認" hide-footer>
       <b-form>
-        <b-form-group>
-          <label class="font-weight-bold">日付</label>
-          <p id="date">{{ selectedDate }} </p>
-
+        <div v-if="!isCompletedWeightInfo">
           <b-form-group>
-            <label class="font-weight-bold">体重</label>
-            <b-form-input
-                id="weight"
-                v-model="returnInfo.weight"
-            >
-              kg
-            </b-form-input>
-          </b-form-group>
-        </b-form-group>
+            <label class="font-weight-bold">日付</label>
+            <p id="date">{{ selectedDate }} </p>
 
-        <div>
-          <b-button
-          @click="changeWeightInfo">{{ insertOrModifyButton }}</b-button>
+            <b-form-group>
+              <label class="font-weight-bold">体重</label>
+              <b-form-input
+                  id="weight"
+                  v-model="returnInfo.weight"
+              >
+                kg
+              </b-form-input>
+            </b-form-group>
+            <div>
+              <b-button
+                  @click="changeWeightInfo">{{ insertOrModifyButton }}
+              </b-button>
+            </div>
+          </b-form-group>
+        </div>
+        <div v-if="isCompletedWeightInfo">
+          <p>登録が完了しました</p>
+          <div>
+            <b-button @click="$bvModal.hide('editor')">
+              閉じる
+            </b-button>
+          </div>
         </div>
       </b-form>
     </b-modal>
@@ -50,8 +60,7 @@
 </template>
 
 <script>
-import {getHealthDiaryByIdAndDate} from "@/service/HealthDiaryService";
-import {postWeightInfo} from "@/service/HealthDiaryService";
+import {getHealthDiaryByIdAndDate, postWeightInfo} from "@/service/HealthDiaryService";
 
 export default {
   name: 'Account',
@@ -61,13 +70,13 @@ export default {
       insertOrModifyButton: '修正',
       userInfo: {
         id: '',
-        name: '',
-        context: null
+        name: ''
       },
       returnInfo: {
         weight: '',
         distinctDate: ''
       },
+      isCompletedWeightInfo: false,
     }
   },
   async created() {
@@ -78,11 +87,12 @@ export default {
     setDate() {
       this.getHealthDiaryByIdAndDate(this.selectedDate);
       this.returnInfo.distinctDate = this.selectedDate;
+      this.isCompletedWeightInfo = false;
     },
     async getHealthDiaryByIdAndDate() {
       let done;
       let results = [];
-      try{
+      try {
         done = await getHealthDiaryByIdAndDate(this.userInfo.id, this.selectedDate);
         results = done.data;
         this.returnInfo.weight = results.weight;
@@ -92,14 +102,15 @@ export default {
           this.returnInfo.weight = '';
           this.insertOrModifyButton = '追加';
         }
-      }catch {
+      } catch {
         console.log("error");
       }
     },
-    changeWeightInfo(){
+    changeWeightInfo() {
       let request = [];
       request = {id: this.userInfo.id, weight: this.returnInfo.weight, date: this.selectedDate};
       postWeightInfo(request);
+      this.isCompletedWeightInfo = true;
     }
   },
 }
