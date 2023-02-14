@@ -1,8 +1,10 @@
 package com.example.springbootdemo.service;
 
 import com.example.springbootdemo.dto.*;
+import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.mapper.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.cglib.core.*;
 import org.springframework.stereotype.*;
 
 import java.time.*;
@@ -20,6 +22,9 @@ public class TrainingService {
         LocalDate thisMonday = today.with(DayOfWeek.MONDAY);
         LocalDate thisSunday = today.with(DayOfWeek.SUNDAY);
         System.out.println(userId);
+        List<Training> trainings = trainingMapper.getTrainingHistory(userId, thisMonday, thisSunday);
+        Map<LocalDate, List<Training>> trainingOfTheWeek = trainings.stream().collect(Collectors.groupingBy(Training::getTrainingDate));
+        System.out.println(trainingOfTheWeek);
         return trainingMapper.getTrainingHistory(userId, thisMonday, thisSunday)
                 .stream()
                 .map(x -> TrainingOfTheWeekResponse

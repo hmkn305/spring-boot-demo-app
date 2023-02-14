@@ -20,7 +20,7 @@ public class trainingOfTheWeekController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @PathVariable("id") Integer userId){
-        System.out.println(userId);
+        System.out.println(trainingService.getTrainingHistory(userId));
         return trainingService.getTrainingHistory(userId);
     }
 }

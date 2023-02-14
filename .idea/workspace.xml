@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="アラートが時間差で消える処理">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/dto/TrainingOfTheWeekResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Training.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/TrainingMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/TrainingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_3__create_training.sql" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="1週間単位のトレーニング記録を取得する機能&#10;バックエンド側">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_2__create_health_diary.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_2__create_health_diary.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +127,7 @@
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
-      <workItem from="1676264871775" duration="14143000" />
+      <workItem from="1676264871775" duration="15105000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -278,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676342277745</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="1週間単位のトレーニング記録を取得する機能&#10;バックエンド側">
+      <created>1676363250024</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1676363250024</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +314,8 @@
     <MESSAGE value="体重情報の登録/更新&#10;バックエンドの処理中" />
     <MESSAGE value="体重情報の登録/更新&#10;フロントエンドのモーダルの処理修正" />
     <MESSAGE value="アラートが時間差で消える処理" />
-    <option name="LAST_COMMIT_MESSAGE" value="アラートが時間差で消える処理" />
+    <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;バックエンド側" />
+    <option name="LAST_COMMIT_MESSAGE" value="1週間単位のトレーニング記録を取得する機能&#10;バックエンド側" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
