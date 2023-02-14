@@ -61,6 +61,7 @@
 
 <script>
 import {getHealthDiaryByIdAndDate, postWeightInfo} from "@/service/HealthDiaryService";
+import {getTrainingOfTheWeek} from "@/service/TrainingOfTheWeekService";
 
 export default {
   name: 'Account',
@@ -82,12 +83,20 @@ export default {
   async created() {
     this.userInfo.name = this.$route.params.name;
     this.userInfo.id = this.$route.params.id;
+    this.getTrainingOfTheWeek(this.userInfo.id);
   },
   methods: {
     setDate() {
       this.getHealthDiaryByIdAndDate(this.selectedDate);
       this.returnInfo.distinctDate = this.selectedDate;
       this.isCompletedWeightInfo = false;
+    },
+    async getTrainingOfTheWeek(id) {
+      let done;
+      let results = [];
+      done = await getTrainingOfTheWeek(id);
+      results = done.data;
+      console.log(results);
     },
     async getHealthDiaryByIdAndDate() {
       let done;

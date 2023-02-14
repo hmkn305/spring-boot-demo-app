@@ -17,9 +17,9 @@ public class trainingOfTheWeekController {
     @Autowired
     TrainingService trainingService;
 
-    @GetMapping("/{id}")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @PathVariable("id") Integer userId){
+    public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @RequestParam("id") Integer userId){
         System.out.println(trainingService.getTrainingHistory(userId));
         return trainingService.getTrainingHistory(userId);
     }
