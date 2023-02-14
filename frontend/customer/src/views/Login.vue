@@ -2,14 +2,16 @@
   <div class="login">
     <h1>ログイン画面</h1>
     <div>
-      <b-alert
-          variant="danger"
-          dismissible
-          fade
-          :show="showDismissibleAlert"
-      >
-        {{  errorMessage }}
-      </b-alert>
+      <div >
+        <b-alert
+            variant="danger"
+            dismissible
+            fade
+            :show="showDismissibleAlert"
+        >
+          {{ errorMessage }}
+        </b-alert>
+      </div>
       <b-form-group
           id="email"
           label="メールアドレス">
@@ -34,7 +36,8 @@
           type="submit"
           variant="primary"
           @click="findByEmailAndPassword(form.email, form.password)"
-          >GO</b-button>
+      >GO
+      </b-button>
     </div>
   </div>
 </template>
@@ -64,11 +67,13 @@ export default {
         done = await findByEmailAndPassword(this.form.email, this.form.password);
         results = done.data;
         console.log(results);
-        if(results.errorType == null){
-         await router.push({name: 'Account', params: {name: results.name, id: results.id}});
+        if (results.errorType == null) {
+          await router.push({name: 'Account', params: {name: results.name, id: results.id}});
         } else {
           this.showDismissibleAlert = true;
           this.errorMessage = results.errorType;
+          setTimeout(() => this.showDismissibleAlert = false,
+              3000);
         }
       } catch {
         console.log("エラー");

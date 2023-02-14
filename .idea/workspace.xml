@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="体重情報の登録/更新&#10;バックエンドの処理中">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="体重情報の登録/更新&#10;フロントエンドのモーダルの処理修正">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/HealthDiaryService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/HealthDiaryService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HealthDiaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HealthDiaryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HealthDiaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HealthDiaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +126,7 @@
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
-      <workItem from="1676264871775" duration="6872000" />
+      <workItem from="1676264871775" duration="7638000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -258,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676021917220</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="体重情報の登録/更新&#10;フロントエンドのモーダルの処理修正">
+      <created>1676273027270</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1676273027270</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +297,8 @@
     <MESSAGE value="新規登録時の対応&#10;フロントエンド側" />
     <MESSAGE value="体重情報の登録/更新&#10;フロントエンド" />
     <MESSAGE value="体重情報の登録/更新&#10;バックエンドの処理中" />
-    <option name="LAST_COMMIT_MESSAGE" value="体重情報の登録/更新&#10;バックエンドの処理中" />
+    <MESSAGE value="体重情報の登録/更新&#10;フロントエンドのモーダルの処理修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="体重情報の登録/更新&#10;フロントエンドのモーダルの処理修正" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
