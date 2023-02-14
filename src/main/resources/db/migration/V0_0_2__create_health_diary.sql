@@ -1,7 +1,7 @@
 CREATE TABLE health_diary
 (
-    id            INT AUTO_INCREMENT NOT NULL,
-    user_id       INT(30)                            NOT NULL,
+    id            INT AUTO_INCREMENT                  NOT NULL,
+    user_id       INT(30)                             NOT NULL,
     weight        INT                                 NOT NULL,
     distinct_date DATE                                NOT NULL,
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,

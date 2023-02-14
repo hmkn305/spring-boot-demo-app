@@ -73,7 +73,7 @@ export default {
        results = res.data;
        console.log(results);
        if(results.errorType == null){
-         await router.push({name: 'Account'});
+         await router.push({name: 'Account', params: {name: this.form.name}});
        } else {
          this.showDismissibleAlert = true;
          this.errorMessage = results.errorType;

@@ -15,5 +15,5 @@ public interface UserMapper {
 
     User getUserByEmail(String email);
 
-    void postUser(CreateAccountRequest request);
+    User postUser(CreateAccountRequest request);
 }

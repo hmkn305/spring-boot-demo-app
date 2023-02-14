@@ -66,7 +66,6 @@ export default {
       try {
         done = await findByEmailAndPassword(this.form.email, this.form.password);
         results = done.data;
-        console.log(results);
         if (results.errorType == null) {
           await router.push({name: 'Account', params: {name: results.name, id: results.id}});
         } else {
