@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="1週間単位のトレーニング記録を取得する機能&#10;日付毎に情報をまとめる処理を記述&#10;日付毎にまとめ絵リスト化、日付順でフロントに返すまで">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/requests/CreateTrainingRequest.java" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をバックエンドに送信、バックエンドでの受信確認、">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/TrainingOfTheWeekService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/TrainingOfTheWeekService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/healthDiary/healthDiaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/requests/CreateTrainingRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/requests/CreateTrainingRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Training.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Training.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/TrainingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/TrainingMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/TrainingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/TrainingMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +133,7 @@
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
-      <workItem from="1676264871775" duration="26788000" />
+      <workItem from="1676264871775" duration="28992000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -302,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676438565736</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をバックエンドに送信、バックエンドでの受信確認、">
+      <created>1676444398321</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1676444398321</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +352,8 @@
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;バックエンド側&#10;日付毎に情報をまとめる処理を記述" />
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;日付毎に情報をまとめる処理を記述&#10;フロントエンドにAPI記述し、日付毎にトレーニングメニューをまとめれたことを確認" />
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;日付毎に情報をまとめる処理を記述&#10;日付毎にまとめ絵リスト化、日付順でフロントに返すまで" />
-    <option name="LAST_COMMIT_MESSAGE" value="1週間単位のトレーニング記録を取得する機能&#10;日付毎に情報をまとめる処理を記述&#10;日付毎にまとめ絵リスト化、日付順でフロントに返すまで" />
+    <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をバックエンドに送信、バックエンドでの受信確認、" />
+    <option name="LAST_COMMIT_MESSAGE" value="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をバックエンドに送信、バックエンドでの受信確認、" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

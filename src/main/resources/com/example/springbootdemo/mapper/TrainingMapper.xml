@@ -10,6 +10,13 @@
     `reps`,
     `training_date`
   </sql>
+  <sql id="insertColumns">
+    `user_id`        = #{userId},
+    `training_menu`  = #{trainingMenu},
+    `times`          = #{times},
+    `reps`           = #{reps},
+    `training_date`  = #{trainingDate}
+  </sql>
 
   <select id="getTrainingHistory" resultType="com.example.springbootdemo.entity.Training">
     SELECT
@@ -19,4 +26,8 @@
     AND training_date <![CDATA[ >= ]]> #{thisMonday}
     AND training_date <![CDATA[ <= ]]> #{thisSunday}
   </select>
+  <insert id="createTrainingInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    INSERT INTO `training`
+    SET <include refid="insertColumns"/>
+  </insert>
 </mapper>

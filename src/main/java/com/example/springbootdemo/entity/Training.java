@@ -5,6 +5,7 @@ import lombok.*;
 import java.time.*;
 
 @Data
+@Builder
 public class Training {
 
     Integer id;

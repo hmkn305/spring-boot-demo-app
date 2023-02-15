@@ -10,16 +10,16 @@ import java.time.*;
 public class CreateTrainingRequest {
 
     @NotNull
-    private Long id;
+    private int id;
 
     @NotNull
     private String trainingMenu;
 
     @NotNull
-    private Long times;
+    private int times;
 
     @NotNull
-    private Long reps;
+    private int reps;
 
     @NotNull
     private LocalDate date;

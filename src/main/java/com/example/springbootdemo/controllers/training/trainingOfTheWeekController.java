@@ -33,7 +33,7 @@ public class trainingOfTheWeekController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void postTrainingInfo(@RequestBody @Validated CreateTrainingRequest request){
-        System.out.println(request);
+        trainingService.postTrainingInfo(request);
     }
 
     @Data

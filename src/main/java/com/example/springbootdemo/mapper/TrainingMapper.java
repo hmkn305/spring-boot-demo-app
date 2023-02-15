@@ -10,4 +10,8 @@ import java.util.*;
 public interface TrainingMapper {
 
     List<Training> getTrainingHistory(int userId, LocalDate thisMonday, LocalDate thisSunday);
+
+//    Optional<Training> getTrainingInfo(int userId, LocalDate date, String trainingMenu);
+
+    void createTrainingInfo(Training training);
 }
