@@ -1,6 +1,6 @@
 package com.example.springbootdemo.controllers.training;
 
-import com.example.springbootdemo.dto.*;
+import com.example.springbootdemo.controllers.training.requests.*;
 import com.example.springbootdemo.service.*;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.*;
@@ -9,6 +9,7 @@ import lombok.*;
 import org.jetbrains.annotations.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.*;
@@ -22,11 +23,17 @@ public class trainingOfTheWeekController {
     @Autowired
     TrainingService trainingService;
 
-    @GetMapping("/{id}")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @PathVariable("id") Integer userId){
+    public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @RequestParam("id") Integer userId){
         System.out.println(trainingService.getTrainingHistory(userId));
         return trainingService.getTrainingHistory(userId);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void postTrainingInfo(@RequestBody @Validated CreateTrainingRequest request){
+        System.out.println(request);
     }
 
     @Data

@@ -9,3 +9,18 @@ export const getTrainingOfTheWeek = (id) => {
      }
   });
 };
+
+export const postTrainingInfo = (request) => {
+  const url = `http://localhost:8080/api/training`;
+  return axios.post(url, {
+    id: request.id,
+    trainingMenu: request.trainingMenu,
+    times: request.times,
+    reps: request.reps,
+    date: request.date,
+  }, {
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+};

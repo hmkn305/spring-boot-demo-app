@@ -23,7 +23,7 @@
               @click="setDate">確認
     </b-button>
 
-    <b-modal id="editor" title="体重確認" hide-footer>
+    <b-modal id="editor" title="体重確認" class="modal-lg" hide-footer>
       <b-form>
         <div v-if="!isCompletedWeightInfo">
           <b-form-group>
@@ -38,6 +38,27 @@
               >
                 kg
               </b-form-input>
+              <div class="container mt-5">
+                <div class="row">
+                  <label class="font-weight-bold text-center">トレーニング</label>
+                  <b-form-select
+                      v-model="trainingMenuDecided"
+                      :options="trainingMenu"
+                  ></b-form-select>
+                  <label class="font-weight-bold text-center">回数</label>
+                  <b-form-select
+                      v-model="trainingTimesDecided"
+                      :options="trainingTimes"
+                  ></b-form-select>
+                  <label class="font-weight-bold text-center">セット数</label>
+                  <b-form-select
+                      v-model="trainingRepsDecided"
+                      :options="trainingReps"
+                  ></b-form-select>
+                  <b-button class="my-3"
+                  @click="postTrainingMenu">メニュー送信</b-button>
+                </div>
+              </div>
             </b-form-group>
             <div>
               <b-button
@@ -61,7 +82,7 @@
 
 <script>
 import {getHealthDiaryByIdAndDate, postWeightInfo} from "@/service/HealthDiaryService";
-import {getTrainingOfTheWeek} from "@/service/TrainingOfTheWeekService";
+import {getTrainingOfTheWeek, postTrainingInfo} from "@/service/TrainingOfTheWeekService";
 
 export default {
   name: 'Account',
@@ -78,12 +99,18 @@ export default {
         distinctDate: ''
       },
       isCompletedWeightInfo: false,
+      trainingMenu: ['ダンベルフライ', 'ベンチプレス', 'インクラインベンチプレス', 'ケーブルフライ'],
+      trainingTimes: [7, 8, 9, 10, 11, 12, 13, 14, 15],
+      trainingReps: [1, 2, 3, 4, 5],
+      trainingMenuDecided: '',
+      trainingTimesDecided: '',
+      trainingRepsDecided: '',
     }
   },
   async created() {
     this.userInfo.name = this.$route.params.name;
     this.userInfo.id = this.$route.params.id;
-    this.getTrainingOfTheWeek(this.userInfo.id);
+    await this.getTrainingOfTheWeek(this.userInfo.id);
   },
   methods: {
     setDate() {
@@ -120,6 +147,15 @@ export default {
       request = {id: this.userInfo.id, weight: this.returnInfo.weight, date: this.selectedDate};
       postWeightInfo(request);
       this.isCompletedWeightInfo = true;
+    },
+    postTrainingMenu(){
+      let request = [];
+      request = {id: this.userInfo.id,
+                 trainingMenu: this.trainingMenuDecided,
+                 times: this.trainingTimesDecided,
+                 reps: this.trainingRepsDecided,
+                 date: this.selectedDate};
+      postTrainingInfo(request);
     }
   },
 }

@@ -25,7 +25,7 @@ public class healthDiaryController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public HealthDiary getHealthDiary(@NotNull @RequestParam("id") Integer userId,
-                                              @Validated @NotNull @RequestParam(name = "date", required = false) @DateTimeFormat(pattern = ISO_LOCAL_DATE_PATTERN) LocalDate date){
+                                      @Validated @NotNull @RequestParam(name = "date", required = false) @DateTimeFormat(pattern = ISO_LOCAL_DATE_PATTERN) LocalDate date){
         return healthDiaryService.getHealthDiary(userId, date);
     }
 
