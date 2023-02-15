@@ -56,7 +56,8 @@
                       :options="trainingReps"
                   ></b-form-select>
                   <b-button class="my-3"
-                  @click="postTrainingMenu">メニュー送信</b-button>
+                            @click="postTrainingMenu">メニュー送信
+                  </b-button>
                 </div>
               </div>
             </b-form-group>
@@ -77,6 +78,11 @@
         </div>
       </b-form>
     </b-modal>
+    <div>
+      <b-table :items="items" :fields="fields" caption-top>
+        <template #table-caption>今週のトレーニング記録</template>
+      </b-table>
+    </div>
   </b-container>
 </template>
 
@@ -105,6 +111,25 @@ export default {
       trainingMenuDecided: '',
       trainingTimesDecided: '',
       trainingRepsDecided: '',
+      fields: [
+        {
+          key: 'trainingDay',
+          label: '日付'
+        },
+        {
+          key: 'trainingMenu',
+          label: 'トレーニング'
+        },
+        {
+          key: 'trainingTimes',
+          label: '回数'
+        },
+        {
+          key: 'trainingReps',
+          label: 'セット数'
+        },
+      ],
+      items: [],
     }
   },
   async created() {
@@ -123,7 +148,19 @@ export default {
       let results = [];
       done = await getTrainingOfTheWeek(id);
       results = done.data;
-      console.log(results);
+      console.log(results[2].training_of_the_week_detail_list.length);
+      console.log(results[2].training_of_the_week_detail_list[0].training_menu);
+      console.log(results.length);
+      for (let i = 0; i < results.length; i++) {
+        this.items.push({trainingDay: results[i].training_date});
+        for (let j = 0; j < results[i].training_of_the_week_detail_list.length; j++) {
+          this.items.push({
+            trainingMenu: results[j].training_of_the_week_detail_list[j].training_menu,
+            trainingTimes: results[j].training_of_the_week_detail_list[j].times,
+            trainingReps: results[j].training_of_the_week_detail_list[j].reps
+          });
+        }
+      }
     },
     async getHealthDiaryByIdAndDate() {
       let done;
@@ -148,13 +185,15 @@ export default {
       postWeightInfo(request);
       this.isCompletedWeightInfo = true;
     },
-    postTrainingMenu(){
+    postTrainingMenu() {
       let request = [];
-      request = {id: this.userInfo.id,
-                 trainingMenu: this.trainingMenuDecided,
-                 times: this.trainingTimesDecided,
-                 reps: this.trainingRepsDecided,
-                 date: this.selectedDate};
+      request = {
+        id: this.userInfo.id,
+        trainingMenu: this.trainingMenuDecided,
+        times: this.trainingTimesDecided,
+        reps: this.trainingRepsDecided,
+        date: this.selectedDate
+      };
       postTrainingInfo(request);
     }
   },
