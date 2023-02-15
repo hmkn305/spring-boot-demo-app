@@ -1,10 +1,9 @@
 package com.example.springbootdemo.service;
 
-import com.example.springbootdemo.dto.*;
+import com.example.springbootdemo.controllers.training.trainingOfTheWeekController.*;
 import com.example.springbootdemo.entity.*;
 import com.example.springbootdemo.mapper.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.cglib.core.*;
 import org.springframework.stereotype.*;
 
 import java.time.*;
@@ -17,24 +16,29 @@ public class TrainingService {
     @Autowired
     TrainingMapper trainingMapper;
 
-    public List<TrainingOfTheWeekResponse> getTrainingHistory(int userId){
+    public List<TrainingOfTheWeekResponse> getTrainingHistory(int userId) {
         LocalDate today = LocalDate.now();
         LocalDate thisMonday = today.with(DayOfWeek.MONDAY);
         LocalDate thisSunday = today.with(DayOfWeek.SUNDAY);
-        System.out.println(userId);
         List<Training> trainings = trainingMapper.getTrainingHistory(userId, thisMonday, thisSunday);
         Map<LocalDate, List<Training>> trainingOfTheWeek = trainings.stream().collect(Collectors.groupingBy(Training::getTrainingDate));
-        System.out.println(trainingOfTheWeek);
-        return trainingMapper.getTrainingHistory(userId, thisMonday, thisSunday)
-                .stream()
-                .map(x -> TrainingOfTheWeekResponse
-                        .builder()
-                        .userId(x.getUserId())
-                        .trainingMenu(x.getTrainingMenu())
-                        .times(x.getTimes())
-                        .reps(x.getReps())
-                        .trainingDate(x.getTrainingDate())
-                        .build())
-                .collect(Collectors.toList());
+        return trainingOfTheWeek.entrySet()
+                                .stream()
+                                .sorted(Map.Entry.comparingByKey())
+                                .map(x -> TrainingOfTheWeekResponse
+                                        .builder()
+                                        .trainingDate(x.getKey())
+                                        .trainingOfTheWeekDetailList(x.getValue()
+                                                                      .stream()
+                                                                      .map(training -> TrainingOfTheWeekDetail
+                                                                              .builder()
+                                                                              .userId(training.getUserId())
+                                                                              .trainingMenu(training.getTrainingMenu())
+                                                                              .times(training.getTimes())
+                                                                              .reps(training.getReps())
+                                                                              .build())
+                                                                      .collect(Collectors.toList()))
+                                        .build())
+                                .collect(Collectors.toList());
     }
 }

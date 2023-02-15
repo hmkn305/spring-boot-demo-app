@@ -1,6 +1,5 @@
 package com.example.springbootdemo.dto;
 
-import com.example.springbootdemo.entity.type.*;
 import lombok.*;
 
 @Data
