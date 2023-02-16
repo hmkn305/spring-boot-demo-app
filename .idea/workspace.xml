@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;TODOを記載">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,13 +81,37 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/customer/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/customer/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="npm.lint" />
+      <item itemvalue="npm.serve" />
       <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.SpringBootDemoApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.lint" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +157,7 @@
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
       <workItem from="1676264871775" duration="41415000" />
-      <workItem from="1676524964508" duration="950000" />
+      <workItem from="1676524964508" duration="6972000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -341,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676519907964</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。">
+      <created>1676526096937</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1676526096937</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +394,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ログインできた時にマイページに遷移する実装" />
     <MESSAGE value="ログイン成功後のルーティング処理&#10;パラメータを渡して「〜さん、こんにちは」と表示" />
     <MESSAGE value="新規登録機能のフロント部分のみを記述" />
     <MESSAGE value="新規登録機能のバックエンド側を実装" />
@@ -384,7 +418,8 @@
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;フロント画面で身長を登録する処理を実装" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;今月の平均体重を算出し、BMIを測定。&#10;double型の配列（3ヶ月のBMIを格納するもの）を作り、戻り値に設定" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;TODOを記載" />
-    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;TODOを記載" />
+    <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

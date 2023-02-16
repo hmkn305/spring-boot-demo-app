@@ -29,8 +29,8 @@ public class HeightService {
     public double[] getBMIForThreeMonths(int userId) {
         double heightOfThisMan = (double) heightMapper.getHeightInfo(userId).getHeight()/100;
         System.out.println(heightOfThisMan);
-        double[] BMIForThreeMonths = new double[3];
-        for(int i = 0; i < 3 ; i++ ){
+        double[] BMIForThreeMonths = new double[4];
+        for(int i = 0; i < 4 ; i++ ){
            LocalDate theDay = LocalDate.now().minusMonths(i);
            LocalDate firstDayOfTheMonth = theDay.withDayOfMonth(1);
            LocalDate lastDayOfTheMonth = theDay.withDayOfMonth(theDay.lengthOfMonth());

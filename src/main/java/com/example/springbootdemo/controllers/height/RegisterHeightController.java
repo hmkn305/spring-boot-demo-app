@@ -29,7 +29,6 @@ public class RegisterHeightController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public double[] getBMIForThreeMonths(@NotNull @RequestParam("id") Integer userId){
-        System.out.println(userId);
         return heightService.getBMIForThreeMonths(userId);
     }
 }

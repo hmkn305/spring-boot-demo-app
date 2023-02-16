@@ -92,8 +92,14 @@
         kg
       </b-form-input>
       <b-button
-          @click="registerHeightInfo">{{ insertOrModifyHeightButton }}
+          @click="registerHeightInfo"
+          class="mt-3">{{ insertOrModifyHeightButton }}
       </b-button>
+    </div>
+    <div class="pb-10">
+      <b-table :items="itemsBmi" :fields="fieldsBmi" caption-top>
+        <template #table-caption>BMIの推移</template>
+      </b-table>
     </div>
   </b-container>
 </template>
@@ -143,6 +149,21 @@ export default {
           label: 'セット数'
         },
       ],
+      fieldsBmi: [
+        {
+          key: 'Month',
+          label: '月'
+        },
+        {
+          key: 'Bmi',
+          label: 'BMI'
+        },
+        {
+          key: 'MarginByLastMonth',
+          label: '先月比'
+        }
+      ],
+      itemsBmi: [],
       items: [],
       height: '',
     }
@@ -161,8 +182,21 @@ export default {
     },
     async getBMIForThreeMonths(id) {
       let done;
+      let results = [];
+      let months = [];
       done = await getBMIForThreeMonths(id);
-      console.log(done.data);
+      results = done.data;
+      months = ['今月', '先月', '先々月'];
+      console.log(months[0]);
+      console.log(results[0]);
+      console.log(results);
+      for (let i = 0; i < 3; i++){
+        this.itemsBmi.push({
+          Month: months[i],
+          Bmi: results[i],
+          MarginByLastMonth: results[i] - results[i+1],
+        });
+      }
     },
     async getTrainingOfTheWeek(id) {
       let done;
@@ -218,13 +252,12 @@ export default {
       postTrainingInfo(request);
     },
     registerHeightInfo() {
-      let request =[];
+      let request = [];
       request = {id: this.userInfo.id, height: this.height};
       postHeightInfo(request);
     }
   },
 }
-
 </script>
 
 <style scoped>
