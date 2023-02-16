@@ -38,6 +38,7 @@ public class HeightService {
         double BMI = Math.floor((averageWeight / Math.pow(heightOfThisMan, 2)) * 10) / 10;
         double[] BMIForThreeMonths = new double[3];
         BMIForThreeMonths[0] = BMI;
+        //TODO: 先月と先々月のBMIを取得し、double型の配列に格納。フロントで棒グラフを表示
         return BMIForThreeMonths;
     }
 }
