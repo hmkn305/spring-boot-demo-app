@@ -29,16 +29,17 @@ public class HeightService {
     public double[] getBMIForThreeMonths(int userId) {
         double heightOfThisMan = (double) heightMapper.getHeightInfo(userId).getHeight()/100;
         System.out.println(heightOfThisMan);
-        //今月のその人のBMIを取得
-        LocalDate firstDayOfThisMonth = LocalDate.now().withDayOfMonth(1);
-        LocalDate lastDayOfThisMonth = LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth());
-        double averageWeight = healthDiaryMapper.getWeightInfoForMonth(userId, firstDayOfThisMonth, lastDayOfThisMonth)
-                                                .stream()
-                                                .collect(Collectors.averagingDouble(HealthDiary::getWeight));
-        double BMI = Math.floor((averageWeight / Math.pow(heightOfThisMan, 2)) * 10) / 10;
         double[] BMIForThreeMonths = new double[3];
-        BMIForThreeMonths[0] = BMI;
-        //TODO: 先月と先々月のBMIを取得し、double型の配列に格納。フロントで棒グラフを表示
+        for(int i = 0; i < 3 ; i++ ){
+           LocalDate theDay = LocalDate.now().minusMonths(i);
+           LocalDate firstDayOfTheMonth = theDay.withDayOfMonth(1);
+           LocalDate lastDayOfTheMonth = theDay.withDayOfMonth(theDay.lengthOfMonth());
+            double averageWeight = healthDiaryMapper.getWeightInfoForMonth(userId, firstDayOfTheMonth, lastDayOfTheMonth)
+                                                    .stream()
+                                                    .collect(Collectors.averagingDouble(HealthDiary::getWeight));
+            double BMI = Math.floor((averageWeight / Math.pow(heightOfThisMan, 2)) * 10) / 10;
+            BMIForThreeMonths[i] = BMI;
+        }
         return BMIForThreeMonths;
     }
 }
