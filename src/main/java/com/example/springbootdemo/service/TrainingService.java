@@ -1,6 +1,5 @@
 package com.example.springbootdemo.service;
 
-import com.example.springbootdemo.controllers.healthDiary.requests.*;
 import com.example.springbootdemo.controllers.training.requests.*;
 import com.example.springbootdemo.controllers.training.trainingOfTheWeekController.*;
 import com.example.springbootdemo.entity.*;

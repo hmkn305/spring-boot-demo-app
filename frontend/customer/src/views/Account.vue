@@ -83,12 +83,25 @@
         <template #table-caption>今週のトレーニング記録</template>
       </b-table>
     </div>
+    <div>
+      <label class="font-weight-bold">身長入力</label>
+      <b-form-input
+          id="height"
+          v-model="height"
+      >
+        kg
+      </b-form-input>
+      <b-button
+          @click="registerHeightInfo">{{ insertOrModifyHeightButton }}
+      </b-button>
+    </div>
   </b-container>
 </template>
 
 <script>
 import {getHealthDiaryByIdAndDate, postWeightInfo} from "@/service/HealthDiaryService";
 import {getTrainingOfTheWeek, postTrainingInfo} from "@/service/TrainingOfTheWeekService";
+import {postHeightInfo} from "@/service/HeightService";
 
 export default {
   name: 'Account',
@@ -96,6 +109,7 @@ export default {
     return {
       selectedDate: '',
       insertOrModifyButton: '修正',
+      insertOrModifyHeightButton: '登録',
       userInfo: {
         id: '',
         name: ''
@@ -130,6 +144,7 @@ export default {
         },
       ],
       items: [],
+      height: '',
     }
   },
   async created() {
@@ -195,6 +210,11 @@ export default {
         date: this.selectedDate
       };
       postTrainingInfo(request);
+    },
+    registerHeightInfo() {
+      let request =[];
+      request = {id: this.userInfo.id, height: this.height};
+      postHeightInfo(request);
     }
   },
 }

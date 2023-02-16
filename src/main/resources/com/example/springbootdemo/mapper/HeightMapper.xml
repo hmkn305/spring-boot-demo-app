@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.HeightMapper">
+  <sql id="insertColumns">
+    `user_id`        = #{userId},
+    `height`         = #{height}
+  </sql>
+
+  <insert id="postHeightInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    INSERT INTO `height`
+    SET <include refid="insertColumns"/>
+  </insert>
+</mapper>
