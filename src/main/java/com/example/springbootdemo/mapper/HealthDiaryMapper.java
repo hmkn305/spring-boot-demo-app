@@ -11,6 +11,8 @@ public interface HealthDiaryMapper {
 
     Optional<HealthDiary> getHealthDiary(Integer userId, LocalDate distinctDate);
 
+    List<HealthDiary> getWeightInfoForMonth(Integer userId, LocalDate firstDay, LocalDate lastDay);
+
     int createWeightInfo(HealthDiary healthDiary);
 
     int updateWeightInfo(HealthDiary healthDiary);

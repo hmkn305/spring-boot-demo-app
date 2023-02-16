@@ -26,6 +26,14 @@
   FROM health_diary
   WHERE user_id = #{userId} AND distinct_date =#{distinctDate}
 </select>
+  <select id="getWeightInfoForMonth" resultType="com.example.springbootdemo.entity.HealthDiary">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM health_diary
+    WHERE user_id = #{userId}
+    AND distinct_date <![CDATA[ >= ]]> #{firstDay}
+    AND distinct_date <![CDATA[ <= ]]> #{lastDay}
+  </select>
   <insert id="createWeightInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
     INSERT INTO `health_diary`
     SET <include refid="insertColumns"/>

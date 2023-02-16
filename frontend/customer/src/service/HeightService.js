@@ -12,3 +12,12 @@ export const postHeightInfo = (request) => {
     },
   });
 };
+
+export const getBMIForThreeMonths = (id) => {
+  const url = `http://localhost:8080/api/height`;
+  return axios.get(url, {
+    params: {
+      id: id,
+    }
+  });
+};

@@ -101,7 +101,7 @@
 <script>
 import {getHealthDiaryByIdAndDate, postWeightInfo} from "@/service/HealthDiaryService";
 import {getTrainingOfTheWeek, postTrainingInfo} from "@/service/TrainingOfTheWeekService";
-import {postHeightInfo} from "@/service/HeightService";
+import {getBMIForThreeMonths, postHeightInfo} from "@/service/HeightService";
 
 export default {
   name: 'Account',
@@ -151,12 +151,18 @@ export default {
     this.userInfo.name = this.$route.params.name;
     this.userInfo.id = this.$route.params.id;
     await this.getTrainingOfTheWeek(this.userInfo.id);
+    await this.getBMIForThreeMonths(this.userInfo.id);
   },
   methods: {
     setDate() {
       this.getHealthDiaryByIdAndDate(this.selectedDate);
       this.returnInfo.distinctDate = this.selectedDate;
       this.isCompletedWeightInfo = false;
+    },
+    async getBMIForThreeMonths(id) {
+      let done;
+      done = await getBMIForThreeMonths(id);
+      console.log(done.data);
     },
     async getTrainingOfTheWeek(id) {
       let done;

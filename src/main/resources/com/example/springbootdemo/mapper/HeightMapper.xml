@@ -2,11 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springbootdemo.mapper.HeightMapper">
+  <sql id="selectColumns">
+    `id`,
+    `user_id`,
+    `height`
+  </sql>
   <sql id="insertColumns">
     `user_id`        = #{userId},
     `height`         = #{height}
   </sql>
-
+  <select id="getHeightInfo" resultType="com.example.springbootdemo.entity.Height">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM height
+    WHERE user_id = #{userId}
+  </select>
   <insert id="postHeightInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
     INSERT INTO `height`
     SET <include refid="insertColumns"/>

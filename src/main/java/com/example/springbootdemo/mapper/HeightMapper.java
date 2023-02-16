@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.*;
 public interface HeightMapper {
 
     void postHeightInfo(Height height);
+
+    Height getHeightInfo(Integer userId);
 }

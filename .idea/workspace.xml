@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="1週間単位のトレーニング記録を取得する機能&#10;データをフロントに持ってきてテーブルに日付毎に表示">
-      <change afterPath="$PROJECT_DIR$/frontend/customer/src/service/HeightService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/requests/CreateHeightRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Height.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HeightMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HeightMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_4__create_height.sql" afterDir="false" />
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;フロント画面で身長を登録する処理を実装">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/HeightService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/HeightService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HealthDiaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HealthDiaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HeightMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/HeightMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HealthDiaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HealthDiaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HeightMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/HeightMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +135,7 @@
       <workItem from="1675843637649" duration="4313000" />
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
-      <workItem from="1676264871775" duration="35792000" />
+      <workItem from="1676264871775" duration="40983000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -328,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676451349214</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="BMIを算出し、月毎に棒グラフを出す機能&#10;フロント画面で身長を登録する処理を実装">
+      <created>1676514020833</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1676514020833</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +351,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="クラス名変更&#10;データベース変更" />
     <MESSAGE value="docker" />
     <MESSAGE value="dockerでmysqlに接続&#10;migrationがうまくいかないので一旦放置して手動でmysqlにデータを挿入していく" />
     <MESSAGE value="ログインできた時にマイページに遷移する実装" />
@@ -371,7 +375,8 @@
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をバックエンドに送信、バックエンドでの受信確認、" />
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;フロントでのメニュー、回数、セット数等をDBにinsert完了" />
     <MESSAGE value="1週間単位のトレーニング記録を取得する機能&#10;データをフロントに持ってきてテーブルに日付毎に表示" />
-    <option name="LAST_COMMIT_MESSAGE" value="1週間単位のトレーニング記録を取得する機能&#10;データをフロントに持ってきてテーブルに日付毎に表示" />
+    <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;フロント画面で身長を登録する処理を実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;フロント画面で身長を登録する処理を実装" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
