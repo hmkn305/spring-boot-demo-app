@@ -101,6 +101,11 @@
         <template #table-caption>BMIの推移</template>
       </b-table>
     </div>
+    <div class="pb-10">
+      <b-table :items="itemsPart" :fields="fieldsPart" caption-top>
+        <template #table-caption>今月の部位毎のトレーニング回数</template>
+      </b-table>
+    </div>
   </b-container>
 </template>
 
@@ -168,7 +173,18 @@ export default {
           label: '先月比'
         }
       ],
+      fieldsPart: [
+        {
+          key: 'Part',
+          label: '部位'
+        },
+        {
+          key: 'Times',
+          label: '回数'
+        },
+      ],
       itemsBmi: [],
+      itemsPart: [],
       items: [],
       height: '',
     }
@@ -189,9 +205,17 @@ export default {
     async getTimesOfTheMonthByPart(id) {
       let done;
       let results = [];
+      let part = [];
       done = await getTimesOfTheMonthByPart(id);
       results = done.data;
       console.log(results);
+      part = ['胸', '肩', '背中', '脚'];
+      for(let i = 0; i < 4; i++){
+        this.itemsPart.push({
+          Part: part[i],
+          Times: results[i].training_times_by_part_for_month
+        });
+      }
     },
     async getBMIForThreeMonths(id) {
       let done;
