@@ -23,7 +23,6 @@ public class TrainingService {
         LocalDate thisSunday = today.with(DayOfWeek.SUNDAY);
         List<Training> trainings = trainingMapper.getTrainingHistory(userId, thisMonday, thisSunday);
         Map<LocalDate, List<Training>> trainingOfTheWeek = trainings.stream().collect(Collectors.groupingBy(Training::getTrainingDate));
-        System.out.println(trainingOfTheWeek);
         return trainingOfTheWeek.entrySet()
                                 .stream()
                                 .sorted(Map.Entry.comparingByKey())
@@ -45,7 +44,7 @@ public class TrainingService {
     }
 
     public void postTrainingInfo(CreateTrainingRequest request){
-//        Optional<Training> training = trainingMapper.getTraining
+        //TODO: 同じメニューと日付が被っていたらupdateの処理を追加したい
         trainingMapper.createTrainingInfo(Training.builder()
                                                   .userId(request.getId())
                                                   .trainingMenu(request.getTrainingMenu())

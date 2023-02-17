@@ -125,7 +125,8 @@ export default {
         distinctDate: ''
       },
       isCompletedWeightInfo: false,
-      trainingMenu: ['ダンベルフライ', 'ベンチプレス', 'インクラインベンチプレス', 'ケーブルフライ'],
+      trainingMenu: ['ダンベルフライ', 'ベンチプレス', 'インクラインベンチプレス', 'ケーブルフライ', 'ショルダープレス', 'ラットプルダウン',
+        'レッグプレス'],
       trainingTimes: [7, 8, 9, 10, 11, 12, 13, 14, 15],
       trainingReps: [1, 2, 3, 4, 5],
       trainingMenuDecided: '',
@@ -190,11 +191,11 @@ export default {
       console.log(months[0]);
       console.log(results[0]);
       console.log(results);
-      for (let i = 0; i < 3; i++){
+      for (let i = 0; i < 3; i++) {
         this.itemsBmi.push({
           Month: months[i],
           Bmi: results[i],
-          MarginByLastMonth: results[i] - results[i+1],
+          MarginByLastMonth: results[i] - results[i + 1],
         });
       }
     },
@@ -203,6 +204,7 @@ export default {
       let results = [];
       done = await getTrainingOfTheWeek(id);
       results = done.data;
+      console.log(results);
       console.log(results[2].training_of_the_week_detail_list.length);
       console.log(results[2].training_of_the_week_detail_list[0].training_menu);
       console.log(results.length);
@@ -210,9 +212,9 @@ export default {
         this.items.push({trainingDay: results[i].training_date});
         for (let j = 0; j < results[i].training_of_the_week_detail_list.length; j++) {
           this.items.push({
-            trainingMenu: results[j].training_of_the_week_detail_list[j].training_menu,
-            trainingTimes: results[j].training_of_the_week_detail_list[j].times,
-            trainingReps: results[j].training_of_the_week_detail_list[j].reps
+            trainingMenu: results[i].training_of_the_week_detail_list[j].training_menu,
+            trainingTimes: results[i].training_of_the_week_detail_list[j].times,
+            trainingReps: results[i].training_of_the_week_detail_list[j].reps
           });
         }
       }

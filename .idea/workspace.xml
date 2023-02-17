@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/customer/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/height/RegisterHeightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,7 @@
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
       <workItem from="1676264871775" duration="41415000" />
-      <workItem from="1676524964508" duration="6972000" />
+      <workItem from="1676524964508" duration="11205000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -376,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676526096937</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示">
+      <created>1676537226900</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1676537226900</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +399,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ログイン成功後のルーティング処理&#10;パラメータを渡して「〜さん、こんにちは」と表示" />
     <MESSAGE value="新規登録機能のフロント部分のみを記述" />
     <MESSAGE value="新規登録機能のバックエンド側を実装" />
     <MESSAGE value="カレンダーの作成&#10;バックエンドに日付やidを渡すところ" />
@@ -419,7 +423,8 @@
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;今月の平均体重を算出し、BMIを測定。&#10;double型の配列（3ヶ月のBMIを格納するもの）を作り、戻り値に設定" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;TODOを記載" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。" />
-    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。" />
+    <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
