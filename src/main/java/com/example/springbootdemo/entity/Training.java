@@ -11,6 +11,7 @@ public class Training {
     Integer id;
     Integer userId;
     String trainingMenu;
+    Integer trainingByPart;
     Integer times;
     Integer reps;
     LocalDate trainingDate;

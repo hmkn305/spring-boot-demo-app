@@ -6,6 +6,7 @@
     `id`,
     `user_id`,
     `training_menu`,
+    `training_by_part`,
     `times`,
     `reps`,
     `training_date`
@@ -13,6 +14,7 @@
   <sql id="insertColumns">
     `user_id`        = #{userId},
     `training_menu`  = #{trainingMenu},
+    `training_by_part` = #{trainingByPart},
     `times`          = #{times},
     `reps`           = #{reps},
     `training_date`  = #{trainingDate}
@@ -25,6 +27,14 @@
     WHERE user_id = #{userId}
     AND training_date <![CDATA[ >= ]]> #{thisMonday}
     AND training_date <![CDATA[ <= ]]> #{thisSunday}
+  </select>
+  <select id="getTimesOfTheMonthByPart" resultType="com.example.springbootdemo.entity.Training">
+    SELECT
+    <include refid="selectColumns"/>
+    FROM training
+    WHERE user_id = #{userId}
+    AND training_date <![CDATA[ >= ]]> #{firstDay}
+    AND training_date <![CDATA[ <= ]]> #{lastDay}
   </select>
   <insert id="createTrainingInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
     INSERT INTO `training`

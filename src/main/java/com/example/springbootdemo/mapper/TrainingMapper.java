@@ -13,5 +13,7 @@ public interface TrainingMapper {
 
 //    Optional<Training> getTrainingInfo(int userId, LocalDate date, String trainingMenu);
 
+    List<Training> getTimesOfTheMonthByPart(int userId, LocalDate firstDay, LocalDate lastDay);
+
     void createTrainingInfo(Training training);
 }

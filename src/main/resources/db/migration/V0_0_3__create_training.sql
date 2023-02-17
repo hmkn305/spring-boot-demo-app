@@ -3,6 +3,7 @@ CREATE TABLE training
     id            INT AUTO_INCREMENT                    NOT NULL,
     user_id       INT(30)                               NOT NULL,
     training_menu VARCHAR(30)                           NOT NULL,
+    training_by_part VARCHAR(30)                        NOT NULL,
     times         INT(30)                               NOT NULL,
     reps          INT(30)                               NOT NULL,
     training_date DATETIME                              NOT NULL,

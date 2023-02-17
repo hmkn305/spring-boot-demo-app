@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示">
+    <list default="true" id="df01f80c-663a-4f5d-a035-70b60459bfa6" name="Changes" comment="フロント部分のfor文の修正">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/customer/src/service/TrainingOfTheWeekService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/service/TrainingOfTheWeekService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/customer/src/views/Account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/HeightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/controllers/training/trainingOfTheWeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Training.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/entity/Training.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/TrainingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/mapper/TrainingMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootdemo/service/TrainingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/TrainingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/springbootdemo/mapper/TrainingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_3__create_training.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V0_0_3__create_training.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
       <workItem from="1675900882757" duration="2456000" />
       <workItem from="1675903363567" duration="50522000" />
       <workItem from="1676264871775" duration="41415000" />
-      <workItem from="1676524964508" duration="11205000" />
+      <workItem from="1676524964508" duration="23232000" />
     </task>
     <task id="LOCAL-00005" summary="docker">
       <created>1675841842633</created>
@@ -381,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676537226900</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="フロント部分のfor文の修正">
+      <created>1676598689768</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1676598689768</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新規登録機能のフロント部分のみを記述" />
     <MESSAGE value="新規登録機能のバックエンド側を実装" />
     <MESSAGE value="カレンダーの作成&#10;バックエンドに日付やidを渡すところ" />
     <MESSAGE value="serviceクラスの導入" />
@@ -424,7 +435,8 @@
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;TODOを記載" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントに送れたことを確認。" />
     <MESSAGE value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示" />
-    <option name="LAST_COMMIT_MESSAGE" value="BMIを算出し、月毎に棒グラフを出す機能&#10;過去3ヶ月分のBMIを算出し、配列に格納。&#10;フロントのテーブルに表示" />
+    <MESSAGE value="フロント部分のfor文の修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="フロント部分のfor文の修正" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

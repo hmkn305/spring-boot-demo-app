@@ -26,8 +26,13 @@ public class trainingOfTheWeekController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<TrainingOfTheWeekResponse> getTrainingHistory(@NotNull @RequestParam("id") Integer userId){
-        System.out.println(trainingService.getTrainingHistory(userId));
         return trainingService.getTrainingHistory(userId);
+    }
+
+    @GetMapping("/by-part")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TrainingByPartForMonth> getTimesOfTheMonthByPart(@NotNull @RequestParam("id") Integer userId){
+        return trainingService.getTimesOfTheMonthByPart(userId);
     }
 
     @PostMapping
@@ -61,4 +66,28 @@ public class trainingOfTheWeekController {
         private int reps;
         private int theTimesGotoGymInTheWeek;
     }
+
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+    public static class TrainingByPartByDate {
+        private LocalDate trainingDate;
+        private Integer trainingTimesByPart;
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+    public static class TrainingByPartForMonth {
+        private Integer trainingByPart;
+        private Integer trainingTimesByPartForMonth;
+    }
+
 }
